@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traitements d'alertes SOC - Portfolio Soulier Jim</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+<div class="logo">Portfolio Soulier Jim</div>
+
+<ul class="nav-links">
+<li><a href="../index.html">Accueil</a></li>
+<li><a href="../about.html">Profil</a></li>
+<li><a href="../projects.html">Réalisations</a></li>
+<li><a href="../skills.html">Compétences</a></li>
+<li><a href="../contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<section class="home-section2" style="text-align:left;">
+
+<h1 style="font-size:48px; margin-bottom:10px;">Traitement et analyse d’alertes de
+sécurité (SOC)</h1>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Contexte</h2>
+
+<p>
+Pendant mon alternance, j’ai été amené à participer au traitement des alertes de sécurité au
+sein de l’équipe cybersécurité. Cette mission a commencé dès mon stage de première
+année de Bachelor, et est devenue au fil du temps une partie régulière de mon quotidien
+professionnel.<br><br>
+L’équipe fonctionne avec un système de cyberpermanence, organisé via un planning
+partagé. Chaque membre de l’équipe, y compris les alternants, est amené à être de garde
+plusieurs jours par semaine afin d’assurer le traitement des alertes de sécurité. Je suis donc
+régulièrement responsable du suivi et de l’analyse des alertes qui me sont attribuées.<br><br>
+Les alertes proviennent de différentes sources. Elles peuvent être générées par des outils
+de sécurité utilisés par l’entreprise, CrowdStrike (EDR), Proofpoint pour la sécurité des
+emails, Okta pour la gestion des identités ou encore anciennement Sophos qui a été
+remplacé par les nouveautés de CrowdStrike. Certaines alertes sont également issues
+d’outils développés en interne par notre équipe. L’ensemble de ces événements est
+centralisé dans un SIEM, anciennement QRadar et désormais NextgeSIEM (le SIEM intégré
+à CrowdStrike).<br><br>
+Lorsqu’une alerte est générée, elle est attribuée à l'opérateur responsable de la
+cyberpermanence de la journée, puis envoyée dans un espace partagé (SharePoint).
+Ensuite, Le traitement consiste à analyser l’origine de l’alerte, comprendre sa source et
+déterminer s’il s’agit d’un incident réel ou d’un faux positif.<br><br>
+J’ai donc été amené à traiter différents types d’alertes, comme des tentatives de phishing,
+des connexions suspectes, des échecs répétés d’authentification, l’exécution de scripts
+suspects sur des machines ou encore des modifications anormales de droits d’accès.
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Objectifs</h2>
+
+<p>
+Mon objectif principal consiste à traiter les alertes de sécurité de manière efficace, pour
+détecter et réagir vite en cas d’incident sur notre système d’information.<br><br>
+Concrètement, je passe une partie de mon temps à analyser les alertes remontées par nos
+outils de sécurité qui me sont attribuées. Je cherche à comprendre d’où elles proviennent et
+à évaluer leur niveau de gravité. L’un des aspects clés, c’est de faire le tri entre les vrais
+incidents et les faux positifs, en m’appuyant sur les données à ma disposition.<br><br>
+Parfois, certaines alertes nécessitent d’aller plus loin. Je creuse alors en croisant les
+informations de plusieurs sources pour mieux cerner ce qui se passe. Si besoin, je contacte
+directement les utilisateurs concernés pour avoir leur retour, valider si l’activité est suspecte
+ou non, et affiner mon analyse.<br><br>
+Selon les cas, je peux être amené à mettre en place des actions pour limiter les risques :
+bloquer un élément malveillant, sécuriser un compte, ou appliquer des mesures correctives
+adaptées. Et pour garder une trace de tout ça, chaque alerte traitée est documentée, ce qui
+permet de retracer les actions menées.
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Moyens mis en œuvre</h2>
+
+<p>
+Le traitement des alertes repose sur une méthodologie structurée qui commence par leur
+réception et leur identification. Lorsqu’une alerte m’est attribuée, je la consulte via le
+sharepoint et j’analyse dans un premier temps sa source ainsi que son type. Les alertes sont
+centralisées dans le SIEM QRadar. Selon l'alerte, je m'adapte et utilise différents outils pour
+creuser l'analyse. Par exemple, si je repère une activité suspecte sur un poste de travail, je
+me sers de CrowdStrike pour reconstituer ce qui s'est passé. Pour un email douteux, c'est
+Proofpoint qui prend le relais : j'examine le message, je remonte à sa source et, si
+nécessaire, je bloque l'expéditeur ou supprime le courrier. Parfois, Sophos intervient aussi
+pour neutraliser une URL dangereuse ou restreindre l'accès à un contenu malveillant. Nous
+avons au fil du temps remplacé la fonction de Sophos par CrowdStrike ayant ajouté les
+fonctionnalités entre temps.<br><br>
+Quand l'alerte touche un compte utilisateur, notamment en cas de connexion suspecte ou de
+tentative d'authentification inhabituelle, j'utilise Okta. Ça me permet de vérifier l'activité du
+compte et de repérer d'éventuelles anomalies. Cette étape permet de confirmer ou non le
+caractère suspect de l’événement.<br><br>
+Dans la majorité des cas, l'analyse technique ne suffit pas : il faut aussi échanger avec
+l'utilisateur concerné. Je prends donc contact avec le collaborateur pour vérifier certains
+points. Dans le cas d'une alerte de phishing, par exemple, il est crucial de savoir si des
+informations sensibles ont été saisies. Ce dialogue permet de mieux cerner la situation et
+d'ajuster les actions à mener.<br><br>
+Selon les conclusions de l'analyse, différentes mesures peuvent être déployées pour
+sécuriser l'environnement : réinitialiser un mot de passe, bloquer un email malveillant, filtrer
+une URL, ou encore appliquer des correctifs sur un compte ou un poste de travail.
+Enfin, chaque alerte traitée est documentée dans le sharepoint. J’y renseigne les différentes
+étapes de l’analyse, les éléments observés ainsi que les actions réalisées. Cette
+documentation permet d’assurer une bonne traçabilité et de faciliter le suivi des incidents.
+</p>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Résultats obtenus</h2>
+
+<p>
+Le traitement régulier des alertes contribue au quotidien à la détection et à la gestion rapide
+de différents incidents de sécurité au sein de l’entreprise. Cette activité participe directement
+au maintien du niveau de sécurité du système d’information, en permettant d’identifier des
+comportements suspects et de réagir avant qu’ils ne deviennent critiques.<br><br>
+Les analyses réalisées au quotidien permettent de distinguer les alertes pertinentes des faux
+positifs, ce qui améliore progressivement la qualité du traitement et la compréhension des
+événements de sécurité. Cela contribue également à affiner les processus existants et à
+mieux prioriser les actions à mener.<br><br>
+Dans certains cas, les actions mises en place ont permis de limiter les risques de manière
+concrète, par exemple en bloquant des emails malveillants, en empêchant l’accès à des
+contenus dangereux ou en sécurisant des comptes utilisateurs après détection d’une activité
+suspecte. Ces interventions permettent de réduire l’exposition de l’entreprise à différentes
+menaces, notamment liées au phishing ou aux compromissions de comptes.<br><br>
+Avec le temps, j’ai gagné en autonomie dans le traitement des alertes et je suis aujourd’hui
+capable de gérer une grande partie des situations rencontrées sans supervision directe.
+Cette montée en compétence me permet d’être plus réactif et plus efficace dans l’analyse et
+la résolution des incidents.<br><br>
+Enfin, la documentation des alertes traitées permet d’assurer une bonne traçabilité des
+actions réalisées et de faciliter le suivi des incidents.
+</p>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Compétences mobilisées</h2>
+
+<p style="font-size: 25px"><strong>Compétences techniques :</strong></p>
+<br>
+
+
+<p>
+• <a href="../skills/analyse-resolution.html" style="font-weight: bold;text-decoration: underline;">Analyse et résolution de problèmes</a> : analyse des alertes de sécurité,
+compréhension de leur origine et mise en place d’actions adaptées en fonction des
+situations rencontrées.<br>
+•  <a href="../skills/securite-applications.html" style="font-weight: bold;text-decoration: underline;">Sécurité des applications</a> : traitement d’alertes liées à des comportements
+suspects, mise en place de mesures de protection afin de limiter les risques pour le
+système d’information.<br>
+•  <a href="../skills/gestion-configuration.html" style="font-weight: bold;text-decoration: underline;">Gestion de la configuration</a> : utilisation et exploitation des différents outils de
+sécurité (SIEM, EDR, IAM, etc.) pour analyser les événements et intervenir sur les
+incidents.<br>
+</p>
+<br><br>
+<p style="font-size: 25px"><strong>Compétences humaines :</strong></p>
+<br>
+<p>
+• <a href="../skills/travail-equipe.html" style="font-weight: bold;text-decoration: underline;">Travail en équipe </a> : collaboration avec l’équipe cybersécurité pour le traitement des
+alertes et les échanges d’informations lors de situations particulières.<br>
+• <a href="../skills/empathie-ecoute.html" style="font-weight: bold;text-decoration: underline;">Empathique et à l’écoute</a> : capacité à se mettre à la place des utilisateurs
+concernés par les alertes, qui peuvent être inquiets ou en difficulté face à des
+situations qu’ils ne comprennent pas, afin de les accompagner et de communiquer
+de manière claire et rassurante.<br>
+• <a href="../skills/adaptabilite.html" style="font-weight: bold;text-decoration: underline;">Adaptabilité</a> : capacité à s’adapter à des situations variées, notamment face à la
+diversité des alertes de sécurité traitées au quotidien. Chaque alerte pouvant être
+différente (phishing, connexions suspectes, comportements anormaux, etc.), il est
+nécessaire d’ajuster son analyse, les outils utilisés et les actions à mettre en place
+en fonction du contexte.<br>
+• <a href="../skills/responsabilites.html" style="font-weight: bold;text-decoration: underline;">Sens des responsabilités</a> : prise en charge d’alertes ayant un impact direct sur la
+sécurité, avec la nécessité de réagir de manière rapide et appropriée.<br>
+ 
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Bilan personnel</h2>
+
+<p>
+Traiter les alertes, c'est ce qui m’a permis de découvrir un aspect très concret de la
+cybersécurité. À la différence d’autres tâches, plus axées sur la configuration ou
+l’automatisation, là, on est en prise directe avec des situations réelles, parfois avec des
+risques immédiats pour l’entreprise.<br><br>
+Au début, ce n’était pas simple. La variété des alertes et des outils pouvait être difficile à
+prendre en main. Mais avec l’expérience, j’ai pris de l’assurance. J’ai appris à analyser plus
+vite, à prendre du recul et à éviter de me précipiter.<br><br>
+Ça m’a aussi beaucoup appris sur la communication, surtout avec des collaborateurs qui ne
+sont pas forcément à l’aise avec l'informatique. Expliquer une situation, rassurer, ça m’a
+obligé à adopter une approche plus humaine dans mon travail.<br><br>
+Aujourd’hui, je me sens vraiment bien dans ce rôle. Gérer les alertes, c’est une activité que
+j’aime particulièrement : elle demande de la rigueur, de l’analyse et de la réactivité. C’est un
+domaine dans lequel j’ai envie de continuer et d’encore progresser.
+</p>
+
+</section>
+
+<footer>
+<p>Portfolio Soulier Jim 2026 - Cybersécurité</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation & Control - Portfolio Soulier Jim</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+<div class="logo">Portfolio Soulier Jim</div>
+
+<ul class="nav-links">
+<li><a href="../index.html">Accueil</a></li>
+<li><a href="../about.html">Profil</a></li>
+<li><a href="../projects.html">Réalisations</a></li>
+<li><a href="../skills.html">Compétences</a></li>
+<li><a href="../contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<section class="home-section2" style="text-align:left;">
+
+<h1 style="font-size:48px; margin-bottom:10px;">Automatisation de la
+documentation et mise en place d’un système de
+contrôle des workflows Okta</h1>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Contexte</h2>
+
+<p>
+Dans la continuité de mon travail sur Okta et sur les workflows IAM, j’ai également été
+amené à travailler sur un sujet plus orienté organisation et suivi interne. Avec le temps, le
+nombre de workflows présents dans l’environnement a augmenté, tout comme les
+demandes de modifications, les évolutions et les nouveaux besoins.<br><br>
+Dans ce contexte, il devenait important d’avoir une documentation claire et à jour des
+workflows existants. Une gestion uniquement manuelle pouvait vite devenir chronophage et
+entraîner certains oublis, notamment lorsqu’un workflow est modifié ou qu’un nouveau est
+créé.<br><br>
+J’ai donc participé à la mise en place d’un système automatisé permettant à la fois de
+documenter les workflows et de contrôler la cohérence entre l’environnement réel et les
+informations renseignées dans les fichiers de suivi.
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Objectifs</h2>
+
+<p>
+L’objectif principal était de centraliser les informations importantes liées aux workflows dans
+un fichier de documentation simple à exploiter par l’équipe.<br><br>
+Il fallait également faciliter le suivi des modifications réalisées dans le temps, afin de garder
+un historique clair des changements apportés sur les workflows.<br><br>
+Enfin, le projet avait aussi pour but de mettre en place un système de contrôle capable de
+vérifier automatiquement certaines cohérences, par exemple s’assurer qu’un workflow
+modifié est bien renseigné dans la documentation.
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Moyens mis en œuvre</h2>
+
+<p>
+Pour répondre à ce besoin, j’ai développé plusieurs scripts en Python permettant
+d’automatiser la récupération et l’organisation des informations liées aux workflows Okta.<br><br>
+Une première partie du script permettait d’alimenter automatiquement un fichier Excel
+servant de documentation. On y retrouvait notamment différentes informations utiles comme
+le nom du workflow, sa date de création, ou d’autres éléments nécessaires au suivi global.<br><br>
+Une deuxième page du fichier était dédiée au suivi des modifications. Lorsqu’un
+changement était réalisé sur un workflow, il pouvait être renseigné afin de conserver une
+trace des évolutions dans le temps.<br><br>
+J’ai ensuite développé un système de contrôle venant comparer les workflows présents
+dans Okta avec les informations présentes dans le fichier Excel. Cela permettait par
+exemple de vérifier qu’un workflow ayant été modifié correspond bien à un élément
+documenté, ou de repérer certaines incohérences.<br><br>
+Pour réaliser cela, j’ai utilisé Python ainsi que différentes bibliothèques comme pandas pour
+le traitement des données, openpyxl pour la gestion du fichier Excel, requests pour certaines
+interactions API et datetime pour la gestion des dates.
+</p>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Résultats obtenus</h2>
+
+<p>
+Cette solution a permis d’améliorer le suivi global des workflows utilisés par l’équipe IAM.<br><br>
+La documentation est devenue plus simple à maintenir et plus fiable qu’un suivi entièrement
+manuel. Les informations importantes sont regroupées dans un seul fichier clair et
+facilement exploitable.<br><br>
+Le système de contrôle permet également d’identifier plus rapidement certains écarts entre
+la documentation et la réalité de l’environnement, ce qui réduit les oublis et facilite la
+maintenance.<br><br>
+Enfin, cette automatisation a permis de gagner du temps sur plusieurs tâches répétitives,
+tout en apportant un meilleur niveau de rigueur dans le suivi des workflows.
+</p>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Compétences mobilisées</h2>
+
+<p style="font-size: 25px"><strong>Compétences techniques :</strong></p>
+<br>
+
+<p>
+• <a href="../skills/scripting-automatisation.html" style="font-weight: bold;text-decoration: underline;">Scripting et automatisation</a> : développement d’un script Python permettant de
+détecter automatiquement les interruptions de flux de logs et d’envoyer des alertes
+sans intervention manuelle.<br>
+
+•  <a href="../skills/gestion-configuration.html" style="font-weight: bold;text-decoration: underline;">Gestion de la configuration</a> : mise en place d’un suivi structuré des workflows et
+maintien d’une documentation exploitable dans le temps.<br>
+•  <a href="../skills/logique-maths.html" style="font-weight: bold;text-decoration: underline;">Algèbre, statistiques, théorie des nombres, logique mathématique</a> : utilisation
+de logiques de comparaison, de vérification et de contrôle automatisé dans le
+développement du système.<br>
+•  <a href="../skills/developpement-fullstack.html" style="font-weight: bold;text-decoration: underline;">Développement Full Stack</a> : mise en place d’une logique complète de génération et de contrôle de documentation, incluant le traitement des données et leur structuration afin de produire une documentation exploitable.
+</p>
+<br><br>
+<p style="font-size: 25px"><strong>Compétences humaines :</strong></p>
+<br>
+<p>
+• <a href="../skills/travail-equipe.html" style="font-weight: bold;text-decoration: underline;">Travail en équipe</a> : réalisation d’un outil répondant à un besoin concret de suivi pour
+l’équipe IAM.<br>
+• <a href="../skills/responsabilites.html" style="font-weight: bold;text-decoration: underline;">Sens des responsabilités</a> : travail sur des éléments utilisés au quotidien pour la
+gestion et la maintenance des workflows.<br>
+• <a href="../skills/empathie-ecoute.html" style="font-weight: bold;text-decoration: underline;">Empathie et à l’écoute</a> : prise en compte des besoins des utilisateurs lors de la structuration de la documentation afin de la rendre claire, compréhensible et facilement exploitable.
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Bilan personnel</h2>
+
+<p>
+Cette réalisation m’a permis de comprendre qu’au-delà de la technique pure, l’organisation
+et la qualité du suivi interne sont également très importantes dans un environnement
+professionnel.<br><br>
+J’ai apprécié travailler sur un sujet concret, utile au quotidien et directement exploitable par
+l’équipe. C’est le type de projet où l’on voit rapidement l’intérêt de ce que l’on développe.<br><br>
+Cela m’a aussi permis de continuer à progresser en Python sur des cas réels, notamment
+autour de l’automatisation, du traitement de données et de la fiabilisation de processus
+existants.<br><br>
+Enfin, ce projet m’a montré que des améliorations parfois simples en apparence peuvent
+avoir un réel impact lorsqu’elles répondent à un besoin précis.
+</p>
+
+</section>
+
+<footer>
+<p>Portfolio Soulier Jim 2026 - Cybersécurité</p>
+</footer>
+
+</body>
+</html>

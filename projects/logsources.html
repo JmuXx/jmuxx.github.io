@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logsources - Portfolio Soulier Jim</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+<div class="logo">Portfolio Soulier Jim</div>
+
+<ul class="nav-links">
+<li><a href="../index.html">Accueil</a></li>
+<li><a href="../about.html">Profil</a></li>
+<li><a href="../projects.html">Réalisations</a></li>
+<li><a href="../skills.html">Compétences</a></li>
+<li><a href="../contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<section class="home-section2" style="text-align:left;">
+
+<h1 style="font-size:48px; margin-bottom:10px;">Développement d’un système
+d’analyse de logsources</h1>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Contexte</h2>
+
+<p>
+Dans le cadre de mon stage de deuxième année de Bachelor chez Emeria, j’ai intégré
+l’équipe chargée de la sécurité opérationnelle. Une partie importante de leur travail repose
+sur la collecte et l’analyse des logs provenant de différents systèmes critiques de
+l’entreprise, comme les serveurs, les applications SaaS ou encore certains outils de
+sécurité. Ces logs sont essentiels pour détecter des incidents, analyser des comportements
+suspects et assurer une bonne traçabilité des actions réalisées sur les systèmes d’informations.<br><br>
+Cependant, il arrivait régulièrement que certaines logsources cessent d’envoyer des
+données sans que cela soit immédiatement détecté. Ces interruptions pouvaient être liées à
+différents problèmes, comme des erreurs de configuration, des pertes de connectivité ou
+encore des limitations techniques. Dans certains cas, ces incidents n’étaient identifiés
+qu’après plusieurs jours, ce qui pouvait compliquer les investigations ou masquer certaines
+anomalies.<br><br>
+C’est dans ce contexte que j’ai été amené à travailler sur la mise en place d’un système
+capable de détecter automatiquement ces arrêts de collecte. Le projet a débuté lors de mon
+stage, puis j’ai continué à le développer et à l’améliorer durant mon alternance afin d’en faire
+une solution plus complète et exploitable par l’équipe.
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Objectifs</h2>
+
+<p>
+L’objectif principal de ce projet était de mettre en place un système capable de détecter
+automatiquement l’absence de logs sur une période donnée, afin d’identifier rapidement les
+interruptions de flux. L’idée était également de pouvoir alerter l’équipe sécurité dès qu’un
+problème est détecté, tout en proposant une solution suffisamment robuste pour fonctionner
+de manière autonome.<br><br>
+Un autre objectif important était de rendre le système facilement configurable, afin qu’il
+puisse s’adapter aux différentes logsources et à leurs spécificités. En effet, toutes les
+sources ne génèrent pas des logs à la même fréquence, ce qui nécessite de définir des
+seuils adaptés en fonction du contexte.
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Moyens mis en œuvre</h2>
+
+<p>
+Avant de commencer le développement, j’ai d’abord pris le temps de bien comprendre le
+besoin en échangeant avec l’équipe sécurité. Cela m’a permis d’identifier les différentes log
+sources utilisées ainsi que leurs spécificités, notamment en termes de fréquence d’envoi et
+de type de flux. J’ai également travaillé sur la définition de critères d’inactivité pertinents, en
+tenant compte du fait que certaines sources envoient des logs très régulièrement, tandis que
+d’autres fonctionnent sur des périodes plus espacées.<br><br>
+Le développement s’est ensuite appuyé sur un script principal en Python, que j’ai structuré
+de manière à pouvoir traiter efficacement les données issues des logs. Pour cela, j’ai utilisé
+plusieurs bibliothèques comme os et datetime pour la gestion des fichiers et du temps,
+pandas pour le traitement et l’analyse des données, ainsi que smtplib et email.message
+pour l’envoi automatique d’alertes par email. J’ai également utilisé configparser afin de
+mettre en place un fichier de configuration permettant d’ajuster facilement les paramètres du
+script sans modifier directement le code. D’autres bibliothèques comme matplotlib ou
+seaborn m’ont permis de visualiser l’activité des log sources et d’analyser leur
+comportement dans le temps.<br><br>
+Le script s’appuie également sur l’exploitation d’une base de données PostgreSQL
+contenant un volume important de logs, ce qui m’a amené à travailler sur des jeux de
+données conséquents et à adapter le traitement en conséquence. À terme, ce système a
+vocation à s’appuyer davantage sur des données en temps réel.<br><br>
+Pour tester la solution, j’ai mis en place plusieurs scénarios simulant des situations réelles,
+comme des flux réguliers, des arrêts brutaux ou encore des retards ponctuels. Ces tests
+m’ont permis d’ajuster progressivement le comportement du système et d’améliorer la
+pertinence des alertes. J’ai également sollicité régulièrement l’équipe sécurité afin de
+recueillir des retours et adapter la solution en fonction de leurs besoins.
+</p>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Résultats obtenus</h2>
+
+<p>
+Le système développé permet aujourd’hui de détecter rapidement les interruptions de
+collecte sur certaines log sources critiques, ce qui réduit considérablement le temps de
+réaction de l’équipe sécurité. Dans plusieurs cas, des arrêts de flux ont pu être identifiés en
+moins de 24 heures, alors qu’ils seraient auparavant passés inaperçus plus longtemps.<br><br>
+La solution permet également d’avoir une meilleure visibilité sur l’activité des log sources,
+notamment en mettant en évidence des comportements anormaux ou des sources
+devenues inactives. Cela a permis d’identifier certaines log sources qui ne communiquaient
+plus depuis un certain temps, ainsi que d’autres sources entièrement dites “muettes”.<br><br>
+Comme tout système de détection, des faux positifs peuvent encore apparaître. Un travail
+est donc en cours pour affiner les règles de détection et mieux classer les log sources afin
+d’améliorer la précision globale du système.<br><br>
+Enfin, une documentation a été réalisée afin de faciliter la prise en main de l’outil par les
+équipes. Aujourd’hui encore, la solution continue d’être améliorée et adaptée en fonction des
+besoins, ce qui montre son utilité dans le contexte de l’entreprise.
+</p>
+
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Compétences mobilisées</h2>
+
+<p style="font-size: 25px"><strong>Compétences techniques :</strong></p>
+<br>
+<p>
+• <a href="../skills/developpement-fullstack.html" style="font-weight: bold;text-decoration: underline;">Développement Full Stack</a> : développement d’un script Python permettant de
+détecter automatiquement les interruptions de flux de logs et d’envoyer des alertes
+sans intervention manuelle.<br>
+•  <a href="../skills/analyse-resolution.html" style="font-weight: bold;text-decoration: underline;">Analyse et résolution de problèmes</a> : identification des causes possibles
+d’inactivité des log sources, définition de seuils adaptés et amélioration progressive
+du système en fonction des résultats obtenus.<br>
+•  <a href="../skills/gestion-configuration.html" style="font-weight: bold;text-decoration: underline;">Gestion de la configuration </a> : mise en place d’un système configurable via un fichier
+externe afin d’adapter facilement les paramètres du script aux différentes log sources
+et aux besoins de l’équipe.<br>
+•  <a href="../skills/securite-applications.html" style="font-weight: bold;text-decoration: underline;">Sécurité des applications</a> : contribution à la fiabilité de la collecte des logs, élément
+essentiel pour la détection d’incidents et la surveillance du système d’information.
+</p>
+<br><br>
+<p style="font-size: 25px"><strong>Compétences humaines :</strong></p>
+<br>
+<p>
+• <a href="../skills/travail-equipe.html" style="font-weight: bold;text-decoration: underline;">Travail en équipe </a> : échanges réguliers avec l’équipe sécurité afin de comprendre les
+besoins, ajuster les seuils de détection et améliorer la pertinence des alertes.<br>
+• <a href="../skills/responsabilites.html" style="font-weight: bold;text-decoration: underline;">Sens des responsabilités</a> : prise en charge d’un projet ayant un impact direct sur la
+surveillance de la sécurité, avec des enjeux liés à la détection d’incidents et à la
+fiabilité des données.<br>
+• <a href="../skills/adaptabilite.html" style="font-weight: bold;text-decoration: underline;">Adaptabilité</a> : capacité à m’adapter à différents types de log sources et à leurs
+comportements spécifiques. Chaque source ayant ses propres caractéristiques
+(fréquence d’envoi, format des données, criticité), j’ai dû ajuster les seuils de
+détection, la logique d’analyse et le fonctionnement global du script afin de proposer
+une solution pertinente et exploitable. 
+</p>
+<br><br>
+<hr>
+
+<h2 style="margin-top:50px;">Bilan personnel</h2>
+
+<p>
+Ce projet m’a beaucoup apporté, notamment sur le plan technique. J’ai pu travailler sur un
+cas concret impliquant de gros volumes de données et comprendre les enjeux liés à la
+fiabilité des logs dans un environnement professionnel.<br><br>
+Il m’a aussi permis de mieux comprendre le fonctionnement global d’un SIEM comme
+QRadar et l’importance de la qualité des données utilisées pour la détection d’incidents. J’ai
+également pris conscience qu’au-delà de la technique, il est essentiel de proposer des
+solutions simples à utiliser et faciles à maintenir pour les équipes.<br><br>
+Enfin, ce projet m’a permis de gagner en autonomie et en organisation. Le fait que la
+solution soit toujours utilisée aujourd’hui et continue d’évoluer est quelque chose de très
+motivant, car cela montre qu’elle répond à un réel besoin.
+</p>
+
+</section>
+
+<footer>
+<p>Portfolio Soulier Jim 2026 - Cybersécurité</p>
+</footer>
+
+</body>
+</html>

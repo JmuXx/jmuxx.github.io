@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Soulier Jim</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-disabled">
+  <div class="logo">Portfolio Soulier Jim</div>
+
+  <ul class="nav-links">
+    <li><h href="index.html">Accueil</h></li>
+    <li><a href="about.html">Profil</a></li>
+    <li><a href="projects.html">Réalisations</a></li>
+    <li><a href="skills.html">Compétences</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="content">
+
+<section class="hero">
+
+  <div class="hero-box">
+    <h1>Site Portfolio</h1>
+
+    <p class="subtitle">
+        Soulier Jim (2024-2026)
+    </p>
+
+    <p class="description">
+      Étudiant en cybersécurité à l'ESIEA.<br>
+      Alternant chez Emeria.
+    </p>
+    <div id="score">0 / 100</div>
+    <div class="hero-buttons"> 
+      <a href="about.html" class="btn">Ma présentation Générale</a>
+      <a href="projects.html" class="btn">Mes projets</a>
+      <a href="skills.html" class="btn">Mes compétences</a>
+      <a href="contact.html" class="btn">Me contacter</a>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>Portfolio Soulier Jim 2026 - Cybersécurité</p>
+</footer>
+
+<canvas id="bg-canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+let score = 0;
+let alreadyCounted = new Set();
+
+for (let i = 0; i < 150; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+let mouse = { x: null, y: null };
+
+window.addEventListener("mousemove", e => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+});
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach((p, index) => {
+
+    if (mouse.x && mouse.y) {
+      let dx = mouse.x - p.x;
+      let dy = mouse.y - p.y;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 150) {
+        p.x += dx * 0.02;
+        p.y += dy * 0.02;
+      }
+
+      if (dist < 40 && !alreadyCounted.has(index)) {
+        alreadyCounted.add(index);
+        score++;
+        document.getElementById("score").innerText = score + " / 100";
+
+        p.vx *= 2;
+        p.vy *= 2;
+
+        if (score >= 100) {
+          alert("🎯 Easter egg unlocked...");
+          window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+          score = 0;
+        }
+      }
+    }
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = "#4da6ff";
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = "#4da6ff";
+    ctx.fill();
+  });
+
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      let dx = particles[i].x - particles[j].x;
+      let dy = particles[i].y - particles[j].y;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = "rgba(77,166,255," + (1 - dist / 120) + ")";
+        ctx.lineWidth = 0.5;
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = "#4da6ff";
+        ctx.stroke();
+      }
+    }
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
