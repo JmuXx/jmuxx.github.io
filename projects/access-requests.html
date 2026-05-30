@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -35,16 +36,20 @@ Dans mon alternance au sein de l’équipe cybersécurité d’Emeria, je suis r
 impliqué dans la gestion des identités et des accès (IAM) via la plateforme Okta. Un aspect
 clé de ce travail concerne les Access Requests, qui permettent aux collaborateurs de
 solliciter l’accès à certaines ressources ou applications de manière organisée et traçable.<br><br>
+
 Ces demandes d’accès offrent un cadre structuré : elles définissent un processus clair pour
 l’attribution des droits, avec des formulaires dédiés, des validations par les responsables si
-voulu, et des automatisations via les workflows. L’objectif est simple : s’assurer que les
-accès sont accordés de façon maîtrisée, en respectant les règles de sécurité de l’entreprise.<br><br>
-Concrètement, j’ai participé à la création, la configuration et l’amélioration de certaines
-Access Requests utilisées par l’équipe IAM. Cela suppose de bien comprendre leur
-fonctionnement, leur articulation avec les workflows Okta et leur lien avec les groupes
-d’utilisateurs, pour que chaque demande soit traitée efficacement et s’intègre correctement
-dans nos processus.
+nécessaire, et des automatisations via les workflows. L’objectif est de s’assurer que les
+accès sont accordés de façon maîtrisée, en respectant les règles de sécurité de
+l’entreprise.<br><br>
+
+Concrètement, j’ai participé à la création, la configuration, la correction et l’amélioration de
+nombreuses Access Requests utilisées par l’équipe IAM. Cela suppose de bien comprendre
+leur fonctionnement, leur articulation avec les workflows Okta ainsi que leur lien avec les
+groupes et les rôles utilisateurs afin que chaque demande soit correctement intégrée dans
+les processus existants.
 </p>
+
 <br><br>
 <hr>
 
@@ -52,49 +57,79 @@ dans nos processus.
 
 <p>
 Dans mon travail sur les Access Requests, je m'efforce avant tout de rendre la gestion des
-droits utilisateurs plus fiable et mieux organisée. Concrètement, je m'occupe de faire évoluer
-les processus existants pour qu'ils restent adaptés et fonctionnels au quotidien.<br><br>
-Je suis aussi amené à créer de nouvelles Access Requests quand le besoin se présente par
-exemple lorsqu'une nouvelle application arrive ou qu'un groupe spécifique nécessite sa
-propre procédure. En parallèle, je renforce les contrôles autour des groupes sensibles, pour
-limiter les risques et éviter qu'on accorde des droits par erreur.<br><br>
-Enfin, je porte une attention particulière à la traçabilité : chaque demande, chaque validation
+droits utilisateurs plus fiable, plus sécurisée et mieux organisée. Concrètement, je m'occupe
+de faire évoluer les processus existants afin qu’ils restent adaptés aux besoins des équipes
+et fonctionnels au quotidien.<br><br>
+
+Je suis également amené à créer de nouvelles Access Requests lorsqu’un besoin apparaît,
+par exemple lors de l’arrivée d’une nouvelle application, de la création d’un nouvel outil
+interne ou lorsqu’un groupe spécifique nécessite sa propre procédure d’attribution
+d’accès.<br><br>
+
+En parallèle, je participe au renforcement des contrôles autour des groupes sensibles afin de
+limiter les risques et éviter qu’un utilisateur obtienne des droits inadaptés. Un autre objectif
+important est l’automatisation. L’idée est de réduire au maximum les actions manuelles afin
+de rendre les processus plus rapides, plus fiables et plus simples à maintenir.<br><br>
+
+Enfin, je porte une attention particulière à la traçabilité. Chaque demande, chaque validation
 et chaque modification doit pouvoir être suivie clairement. C’est essentiel pour garder une
-gestion transparente et maîtrisée des accès.
+gestion transparente et maîtrisée des accès dans l’environnement IAM de l’entreprise.
 </p>
+
 <br><br>
 <hr>
 
-<h2 style="margin-top:50px;">Moyens mis en œuvre</h2>
+<h2 style="margin-top:50px;">Étapes de réalisations</h2>
 
 <p>
-Pour intervenir sur les Access Requests, j’ai d’abord dû comprendre leur fonctionnement
-ainsi que la logique globale derrière celles-ci. Une Access Request repose sur un formulaire
-contenant plusieurs champs, qui permettent de structurer la demande utilisateur. J’ai donc
-appris à configurer ces champs, à comprendre leur utilité et à les adapter en fonction des
-besoins exprimés par l’équipe.<br><br>
-Un élément central de ce travail est le lien entre les Access Requests et les workflows Okta.
-Dans la majorité des cas, les informations renseignées dans une demande sont transmises
-à un workflow chargé de traiter la demande. J’ai donc dû comprendre en détail cette
-interaction, afin de m’assurer que les demandes soient correctement prises en compte et
-intégrées dans les processus existants.<br><br>
-J’ai aussi appris à utiliser les Config Lists d’Okta Access Request, qui permettent de
-centraliser certaines données utilisées dans les workflows et les Access Requests. Elles
-facilitent la gestion de paramètres communs et permettent de rendre les processus plus
-modulaires et plus faciles à maintenir dans le temps.<br><br>
-Le fonctionnement des groupes Okta représente également un aspect essentiel de la
-gestion des Access Requests. Chaque demande est associée à un groupe spécifique, ce
-qui permet de contrôler quels utilisateurs peuvent y accéder. J’ai donc dû comprendre à la
-fois le fonctionnement général des règles ainsi que des groupes dans Okta.<br><br>
-J’ai été amené à utiliser l’API Okta liée aux Access Requests afin d’automatiser certaines
-actions. Cela m’a notamment permis de créer en masse des Access Requests ou encore de
-générer des Config Lists de manière automatisée, plutôt que de les configurer manuellement
-une par une.<br><br>
-Pour résumer, la création ou la modification d’une Access Request nécessite de prendre en
-compte plusieurs éléments à la fois : la configuration du formulaire, les groupes associés,
-les workflows déclenchés ainsi que les différents paramètres utilisés dans l’environnement
-Okta. J’ai donc dû apprendre à manipuler l’ensemble de ces ressources afin de pouvoir
-intégrer correctement les demandes d’accès dans les processus existants.
+Lorsque j’ai commencé à travailler sur les Access Requests, j’ai d’abord dû comprendre le
+fonctionnement global de l’environnement IAM ainsi que l’architecture mise en place autour
+d’Okta. J’ai pris le temps d’analyser les Access Requests déjà existantes afin de comprendre
+leur logique de fonctionnement, les workflows associés, les groupes utilisés ainsi que les
+différentes validations appliquées selon les cas.<br><br>
+
+J’ai ensuite commencé par intervenir sur des demandes relativement simples, comme des
+modifications de formulaires, des ajustements de groupes ou des corrections sur certains
+workflows existants. Progressivement, j’ai été amené à gérer des Access Requests de plus
+en plus complexes, notamment sur des groupes sensibles, des rôles administrateurs ou des
+outils internes utilisés par plusieurs équipes.<br><br>
+
+Au total, j’ai participé à la création ou à la modification d’environ une cinquantaine d’Access
+Requests différentes. Certaines concernaient de simples ajouts dans des groupes Okta,
+tandis que d’autres impliquaient des traitements beaucoup plus avancés via Okta
+Workflows.<br><br>
+
+Par exemple, certains workflows permettaient d’ajouter automatiquement des utilisateurs
+dans plusieurs groupes en fonction de leur profil, tandis que d’autres réalisaient des
+modifications d’attributs personnalisés directement dans Okta afin de gérer certains cas
+métiers spécifiques. J’ai également travaillé sur des workflows capables d’effectuer
+différentes actions automatiques comme l’envoi de mails de notification, la génération de
+logs pour assurer la traçabilité des actions réalisées ou encore la suppression automatique
+d’un rattachement lorsqu’une situation était détectée comme non conforme.<br><br>
+
+Une partie importante de mon travail a aussi consisté à mettre en place des contrôles
+d’accès sur les Access Requests elles-mêmes. En effet, certaines demandes étant sensibles,
+il était nécessaire de limiter leur visibilité ou leur utilisation uniquement à certains groupes
+d’utilisateurs. J’ai donc configuré plusieurs règles basées sur les groupes Okta afin de gérer
+les droits d’accès aux différentes demandes.<br><br>
+
+J’ai également été amené à utiliser l’API Okta ainsi que l’API Okta Access Requests afin
+d’automatiser certaines tâches répétitives. Pour cela, j’ai développé plusieurs scripts Python
+permettant notamment de créer en masse des Access Requests, générer automatiquement
+des Config Lists ou encore modifier certains attributs sur un grand nombre d’utilisateurs sans
+avoir à effectuer les changements manuellement un par un.<br><br>
+
+Au fil du temps, j’ai aussi participé à l’amélioration et à la correction de nombreuses Access
+Requests déjà en production. Certaines présentaient des comportements incorrects, des
+problèmes de logique ou des workflows incomplets. J’ai donc dû analyser leur
+fonctionnement, comprendre les causes des problèmes puis proposer des corrections sans
+impacter les processus déjà utilisés par les collaborateurs.<br><br>
+
+Enfin, chaque modification réalisée faisait l’objet d’une phase de qualification avant la mise
+en production. Cette étape est particulièrement importante car une erreur sur une Access
+Request peut avoir des conséquences importantes sur la gestion des accès utilisateurs. J’ai
+également participé à la documentation des modifications réalisées à travers un système de
+documentation automatisé que j’ai développé dans le cadre d’une autre réalisation.
 </p>
 
 <br><br>
@@ -103,22 +138,32 @@ intégrer correctement les demandes d’accès dans les processus existants.
 <h2 style="margin-top:50px;">Résultats obtenus</h2>
 
 <p>
-Les différentes Access Requests mises en place ainsi que les modifications apportées aux
-demandes existantes ont permis d’améliorer la gestion des accès au sein de l’entreprise.
-Les demandes sont désormais mieux structurées et mieux adaptées aux besoins des
-utilisateurs, ce qui facilite leur traitement par l’équipe IAM au quotidien.<br><br>
-L’automatisation de certaines actions, notamment via l’utilisation de l’API Okta Access
-Request, a permis de gagner du temps sur des tâches répétitives comme la création de
-nombreuses Access Requests ou de Config Lists. Cela a également amélioré ma capacité à
-traiter des demandes plus complexes ou impliquant un volume important de configurations.<br><br>
-Avec le temps, j’ai gagné en autonomie sur ces sujets et je suis aujourd’hui capable de
-traiter plus rapidement les demandes de création ou de modification. Cela permet à l’équipe
-de faire évoluer les processus IAM de manière plus fluide.<br><br>
+Les différentes Access Requests mises en place ainsi que les nombreuses modifications
+apportées aux demandes existantes ont permis d’améliorer la gestion des accès au sein de
+l’entreprise. Les processus sont aujourd’hui plus structurés, plus simples à utiliser pour les
+collaborateurs et plus faciles à maintenir pour l’équipe IAM.<br><br>
+
+L’automatisation mise en place via les workflows et les scripts Python a permis de réduire le
+temps passé sur certaines tâches répétitives tout en limitant les risques d’erreurs manuelles.
+Par exemple, la création en masse d’Access Requests ou la génération automatisée de
+Config Lists a permis de gagner un temps important lors de certaines évolutions impliquant
+de nombreux groupes ou applications.<br><br>
+
+Les différents contrôles ajoutés sur les groupes sensibles et certaines demandes critiques
+ont également permis de mieux sécuriser l’attribution des accès. Cela contribue à limiter les
+risques liés à des erreurs de configuration ou à des droits accordés de manière
+inadaptée.<br><br>
+
+Avec le temps, j’ai gagné en autonomie sur ces sujets et je suis aujourd’hui capable de gérer
+une grande partie des créations, modifications et corrections d’Access Requests sans
+supervision directe. Cela permet à l’équipe de faire évoluer les processus IAM de manière
+plus fluide et plus rapide.<br><br>
+
 Dans l’ensemble, les retours de l’équipe sont positifs. Les solutions mises en place
 répondent aux besoins exprimés et s’intègrent correctement dans l’environnement existant.
-Comme dans tout travail de configuration et de développement, la mise en production est
-progressive, il est important de d’abord passer par une mise en qualification afin d’éviter
-qu'une petite erreur puisse avoir un lourd impact directement sur le tenant de production.
+Comme dans tout travail de configuration et de développement, la mise en production reste
+progressive et nécessite toujours des phases de qualification afin d’éviter qu’une erreur
+puisse avoir un impact important sur le tenant de production.
 </p>
 
 <br><br>
@@ -128,14 +173,15 @@ qu'une petite erreur puisse avoir un lourd impact directement sur le tenant de p
 
 <p style="font-size: 25px"><strong>Compétences techniques :</strong></p>
 <br>
+
 <p>
 • <a href="../skills/gestion-configuration.html" style="font-weight: bold; text-decoration: underline;">Gestion de la configuration</a> : mise en place et modification des Access Requests,
 configuration des champs, des groupes associés et des paramètres nécessaires au
-bon fonctionnement des demandes d’accès.<br>
+bon fonctionnement des demandes d’accès.<br><br>
 
-• <a href="../skills/securite-applications.html" style="font-weight: bold; text-decoration: underline;">Sécurité des applications</a> : mmise en place de contrôles sur l’attribution des accès,
+• <a href="../skills/securite-applications.html" style="font-weight: bold; text-decoration: underline;">Sécurité des applications</a> : mise en place de contrôles sur l’attribution des accès,
 notamment pour les groupes sensibles, afin de garantir le respect des règles de
-sécurité et la traçabilité des modifications.<br>
+sécurité et la traçabilité des modifications.<br><br>
 
 • <a href="../skills/analyse-resolution.html" style="font-weight: bold; text-decoration: underline;">Analyse et résolution de problèmes</a> : compréhension des besoins exprimés lors
 des demandes d’évolution, identification des ajustements nécessaires et adaptation
@@ -143,48 +189,68 @@ des Access Requests en fonction des différentes contraintes.<br>
 </p>
 
 <br><br>
+
 <p style="font-size: 25px"><strong>Compétences humaines :</strong></p>
 <br>
 
 <p>
 • <a href="../skills/travail-equipe.html" style="font-weight: bold; text-decoration: underline;">Travail en équipe</a> : collaboration avec l’équipe IAM lors des réunions et échanges
 réguliers pour comprendre les besoins et adapter les demandes d’accès en
-conséquence.<br>
+conséquence.<br><br>
 
 • <a href="../skills/adaptabilite.html" style="font-weight: bold; text-decoration: underline;">Adaptabilité</a> : capacité à traiter des demandes variées, allant de simples
 ajustements à des évolutions plus complexes des Access Requests. Mais également
 capacité à analyser et comprendre les besoins exprimés par des collaborateurs non
-issus du domaine technique, même lorsque les demandes sont imprécises.<br>
+issus du domaine technique, même lorsque les demandes sont imprécises.<br><br>
 
 • <a href="../skills/responsabilites.html" style="font-weight: bold; text-decoration: underline;">Sens des responsabilités</a> : intervention sur des processus liés à la gestion des
 accès utilisateurs, qui représentent un enjeu important pour la sécurité du système
-d’information. Processus vital de l’entreprise.<br>
+d’information. Processus vital de l’entreprise.<br><br>
 
 • <a href="../skills/empathie-ecoute.html" style="font-weight: bold; text-decoration: underline;">Empathique et à l'écoute</a> : capacité à comprendre les besoins exprimés par les
 collaborateurs, même lorsqu’ils ne sont pas formulés de manière technique. Cela
 implique de poser les bonnes questions, de reformuler les demandes et de proposer
 des solutions adaptées tout en tenant compte du contexte métier.<br>
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Bilan personnel</h2>
 
 <p>
-Travailler sur les demandes d'accès m'a vraiment ouvert les yeux sur les enjeux concrets de
-la gestion des droits en entreprise. J'ai compris à quel point il est crucial d'avoir des
-processus bien encadrés, surtout quand on touche à des accès sensibles.<br><br>
-Cette immersion m'a aussi donné une vision plus complète de la gestion des identités et des
-accès dans l'organisation. Là où les workflows permettent de l'automatisation, les demandes
-d'accès m'ont fait comprendre la logique humaine derrière chaque processus : comment un
-besoin métier se traduit techniquement, et pourquoi la traçabilité est si importante.<br><br>
-Aujourd'hui, je peux rapidement comprendre une demande, la structurer et proposer des
-solutions qui tiennent compte des contraintes existantes. L'année prochaine, je continuerai
-très probablement à travailler sur Okta et sur les Access requests, ce qui va me permettre
-encore d'approfondir davantage mon expertise.<br><br>
-Enfin, cette expérience a renforcé ma rigueur. Travailler sur ce type de sujets m’a fait
-prendre conscience de l’impact que peuvent avoir certaines erreurs et de l’importance de
-mettre en place des contrôles fiables.
+Travailler sur les Access Requests m’a permis de mieux comprendre les enjeux concrets de
+la gestion des accès dans une grande entreprise. J’ai rapidement réalisé qu’au-delà de la
+simple attribution de droits, ces processus représentent un élément essentiel de la sécurité
+du système d’information.<br><br>
+
+Cette expérience m’a également permis d’approfondir ma compréhension d’Okta, des
+workflows IAM et de l’automatisation de processus complexes. Au fil des mois, j’ai gagné en
+autonomie et en capacité d’analyse, notamment sur des demandes de plus en plus sensibles
+ou techniques.<br><br>
+
+J’ai aussi beaucoup progressé sur la compréhension des besoins métiers. Certaines
+demandes provenaient de collaborateurs non techniques et il fallait réussir à traduire leur
+besoin en un processus fonctionnel et sécurisé. Cela m’a appris à mieux communiquer, à
+poser les bonnes questions et à proposer des solutions adaptées au contexte.<br><br>
+
+Cette réalisation m’a également fait prendre conscience de l’importance des phases de test
+et de qualification. Une erreur dans un workflow ou dans une Access Request peut avoir des
+conséquences importantes sur les accès utilisateurs. J’ai donc appris à être plus rigoureux
+dans mes développements et dans mes vérifications avant chaque mise en production.<br><br>
+
+Concernant les lendemains du projet, je vais très probablement continuer à travailler sur
+Okta et les Access Requests durant la suite de mon alternance. De nouvelles demandes
+continuent d’apparaître régulièrement avec l’arrivée de nouveaux outils, de nouveaux groupes
+ou de nouveaux besoins métiers. Les workflows existants continuent également d’évoluer,
+ce qui me permettra de continuer à approfondir mes compétences sur ces sujets.<br><br>
+
+Avec un regard critique, je pense qu’il me reste encore des axes d’amélioration, notamment
+sur certaines architectures IAM complexes ou sur des workflows avancés impliquant de très
+nombreuses conditions et dépendances. Même si je suis aujourd’hui autonome sur une
+grande partie des sujets, certaines situations nécessitent encore l’expérience des membres
+plus expérimentés de l’équipe. Cependant, cette réalisation représente aujourd’hui l’une des
+missions les plus importantes et les plus formatrices de mon alternance.
 </p>
 
 </section>
@@ -195,3 +261,4 @@ mettre en place des contrôles fiables.
 
 </body>
 </html>
+```
