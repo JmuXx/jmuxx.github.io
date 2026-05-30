@@ -75,44 +75,84 @@ des modifications apportées dans le système.
 <br><br>
 <hr>
 
-<h2 style="margin-top:50px;">Moyens mis en œuvre</h2>
+<h2 style="margin-top:50px;">Étapes de réalisation</h2>
 
-<p>Afin de pouvoir intervenir efficacement sur les workflows utilisés par l’équipe IAM, j’ai
+<p>
+Afin de pouvoir intervenir efficacement sur les workflows utilisés par l’équipe IAM, j’ai
 d’abord dû me familiariser avec l’environnement de développement proposé par Okta
 Workflows. Contrairement à un développement classique basé uniquement sur du code, les
-workflows Okta reposent sur un système de programmation visuelle basé sur des cartes
+workflows Okta reposent sur un système de programmation visuelle composé de cartes
 logiques reliées entre elles. Chaque carte représente une action, une condition ou une
 interaction avec un service externe. Cette approche est relativement différente des langages
-de programmation traditionnels et peut être déroutante au début, notamment lorsque les
-workflows deviennent volumineux et contiennent de nombreuses branches logiques.<br><br>
-J’ai donc dû apprendre à comprendre la structure de ces workflows afin de pouvoir intervenir
-dessus de manière fiable. Le projet global était déjà existant, mis en place par une équipe
-externe, et pour lequel je suis devenu l’un des deux spécialistes au fil du temps. Dans
-certains cas, les workflows existants étaient déjà relativement complexes et comportaient de
-nombreuses étapes. Avant de pouvoir apporter une modification, il était nécessaire de les
-analyser en détail, de comprendre leur logique interne et d’identifier précisément les points
-d’intervention possibles. Cette phase d’analyse m’a amené à décortiquer plusieurs
-workflows importants afin d’en comprendre le fonctionnement global et les interactions entre
-leurs différentes composantes.<br><br>
-En parallèle, j’ai également dû approfondir ma compréhension du fonctionnement interne de
-la plateforme Okta. Les workflows interagissent en effet directement avec différents
-éléments du système de gestion des identités, notamment les groupes d’utilisateurs, les
-règles d’attribution des accès ou encore certains événements liés à la gestion des comptes.
-Comprendre ces mécanismes était indispensable afin de pouvoir modifier les workflows
-sans perturber le fonctionnement global du système.<br><br>
-Une autre partie importante de mon travail a consisté à comprendre et utiliser les différentes
-API utilisées par les workflows. Les workflows Okta permettent en effet d’interagir avec
-plusieurs services externes ou internes à travers des appels API. J’ai notamment été amené
-à manipuler l’API Okta elle-même afin de récupérer ou modifier certaines informations liées
-aux utilisateurs ou aux groupes. J’ai également travaillé avec d’autres API utilisées dans les
-processus internes de l’entreprise, comme certaines intégrations avec Jira ou encore des
-services de stockage utilisant AWS S3.<br><br>
-L’utilisation de ces API m’a permis de mieux comprendre la manière dont les workflows
-s’intègrent dans l’écosystème technique de l’entreprise et comment ils peuvent automatiser
-des interactions entre différents systèmes. Cela m’a également permis de développer une
-approche plus structurée dans la modification des workflows, en prenant en compte
-l’ensemble des dépendances et des flux de données impliqués.
+de programmation traditionnels et peut rapidement devenir complexe lorsque les workflows
+contiennent de nombreuses conditions ou branches logiques.<br><br>
+
+J’ai donc commencé par apprendre le fonctionnement global des workflows déjà présents
+dans l’environnement Okta de l’entreprise. Une grande partie des workflows utilisés par
+l’équipe IAM existait déjà avant mon arrivée et certains étaient particulièrement conséquents.
+Avant de pouvoir intervenir dessus, j’ai dû analyser leur structure, comprendre leur logique
+et identifier précisément les différentes interactions entre les cartes et les services utilisés.
+Cette phase d’analyse était indispensable afin de pouvoir modifier les workflows sans
+perturber les processus déjà en place.<br><br>
+
+Au fur et à mesure, j’ai commencé à intervenir sur des demandes de modifications discutées
+lors des réunions IAM organisées plusieurs fois par semaine. Certaines demandes étaient
+relativement simples, comme la correction d’un affichage incorrect dans un email
+automatique, l’ajout d’un contrôle supplémentaire ou encore l’adaptation d’un comportement
+déjà existant dans un workflow. D’autres demandes nécessitaient des modifications plus
+importantes de la logique existante. On m’a récemment demandé par exemple de permettre
+la saisie de plusieurs codes d’agences dans un même champ, soit en les sélectionnant dans
+une liste, soit en entrant directement les codes manuellement. Ce type de demande
+nécessitait de revoir une partie de la logique afin de gérer correctement plusieurs formats de
+données tout en conservant un fonctionnement cohérent.<br><br>
+
+En parallèle, j’ai approfondi ma compréhension du fonctionnement global de la plateforme
+Okta. Les workflows interagissent directement avec les groupes utilisateurs, les comptes,
+certains attributs personnalisés ainsi que plusieurs règles utilisées dans l’environnement
+IAM. Comprendre ces mécanismes était indispensable afin de pouvoir intervenir sur les
+workflows sans créer d’impact négatif sur d’autres processus liés à la gestion des accès.<br><br>
+
+Une autre partie importante de mon travail a consisté à utiliser différentes API intégrées dans
+les workflows. J’ai notamment manipulé l’API Okta afin de récupérer ou modifier certaines
+informations liées aux utilisateurs, aux groupes ou aux attributs présents dans le tenant
+Okta. J’ai également travaillé avec d’autres intégrations utilisées dans l’environnement de
+l’entreprise, notamment Jira ou certains services utilisant AWS S3. Cela m’a permis de
+mieux comprendre la manière dont les workflows permettent de faire communiquer plusieurs
+outils entre eux afin d’automatiser certains processus.<br><br>
+
+Au cours de mon alternance, j’ai travaillé sur un nombre important de workflows différents.
+J’ai participé au développement, à la modification ou à l’amélioration d’environ une centaine
+de workflows liés à différents besoins IAM. Certains workflows avaient pour objectif de
+réaliser des contrôles automatiques planifiés. Par exemple, j’ai développé des workflows de
+type “schedule” exécutés quotidiennement afin de vérifier si certains types d’événements ou
+d’alertes étaient bien remontés dans les outils de sécurité.<br><br>
+
+D’autres workflows répondaient à des besoins plus ponctuels et spécifiques. J’ai notamment
+participé à la mise en place d’un workflow utilisé dans le cadre du projet Seiitra afin
+d’automatiser certaines actions liées aux comptes utilisateurs d’une filiale spécifique. Cela
+permettait d’éviter un traitement manuel particulièrement long sur un grand nombre de
+comptes.<br><br>
+
+J’ai également développé plusieurs workflows liés à la génération de rapports et à
+l’exploitation des données présentes dans Okta. L’un d’eux permet par exemple de générer
+automatiquement des rapports contenant les utilisateurs appartenant à une société, une
+région ou une agence spécifique selon les critères demandés. D’autres workflows avaient
+pour objectif de détecter certains événements sensibles, comme l’ajout ou la suppression
+d’utilisateurs dans des groupes précis nécessitant un suivi particulier.<br><br>
+
+Avec le temps, je suis devenu de plus en plus autonome sur ces sujets et j’ai progressivement
+pris en charge des modifications plus importantes. Aujourd’hui, je suis capable d’analyser un
+workflow existant, de comprendre rapidement son fonctionnement, d’identifier les impacts
+potentiels d’une modification puis de proposer une solution adaptée aux besoins exprimés
+par les équipes.<br><br>
+
+Enfin, chaque modification réalisée est testée dans un environnement de qualification avant
+toute mise en production. Cette étape est essentielle car les workflows IAM sont directement
+liés à la gestion des accès utilisateurs. Une erreur de logique ou une mauvaise configuration
+pourrait avoir un impact important sur certains processus liés aux accès ou aux comptes
+utilisateurs.
 </p>
+
 
 <br><br>
 <hr>
@@ -120,21 +160,44 @@ l’ensemble des dépendances et des flux de données impliqués.
 <h2 style="margin-top:50px;">Résultats obtenus</h2>
 
 <p>
-On apporte continuellement de nouvelles modifications aux workflows Okta, ce qui a permis
-d'améliorer petit à petit la gestion des accès par l'équipe IAM France. Ces changements ont
-notamment permis de corriger certains comportements, d'ajouter de nouveaux contrôles et
-d'automatiser des tâches qui se faisaient encore manuellement avant.<br><br>
-Au quotidien, ces ajustements rendent la gestion des accès plus fiable et plus simple à
-prendre en main. Grâce à ces workflows, on contrôle mieux certaines actions sur les
-comptes ou les groupes, tout en gardant une bonne trace des modifications.<br><br>
-Avec le temps, j'ai aussi gagné en autonomie sur ces sujets. Maintenant, les demandes de
-changement dont on discute en réunion IAM peuvent être traitées plus rapidement, ce qui
-aide l'équipe à faire évoluer les processus plus efficacement.<br><br>
-Dans l'ensemble, l'équipe est satisfaite du travail réalisé. La plupart des modifications que je
-mets en place répondent bien aux besoins et s'intègrent sans soucis dans les workflows
-existants. Bien sûr, comme dans tout travail de développement, il arrive qu'un ajustement ou
-une correction soit nécessaire, mais c'est assez ponctuel et ça fait partie du processus
-normal d'amélioration continue.
+Les différentes modifications et améliorations apportées aux workflows Okta ont permis de
+faire évoluer progressivement les processus IAM utilisés par l’équipe sécurité. Au fil du
+temps, ces évolutions ont permis de rendre la gestion des accès plus fiable, plus cohérente
+et mieux adaptée aux besoins des équipes et des utilisateurs.<br><br>
+
+Les workflows développés ou modifiés ont notamment permis d’automatiser plusieurs tâches
+qui étaient auparavant réalisées manuellement. Cela a contribué à réduire certaines actions
+répétitives, à limiter les risques d’erreurs humaines et à améliorer le suivi des opérations
+effectuées sur les comptes, les groupes ou certains processus internes liés à la gestion des
+identités.<br><br>
+
+Certains workflows ont également permis d’améliorer les contrôles autour des événements
+sensibles. Par exemple, la mise en place de workflows de supervision ou de vérification
+automatique permet aujourd’hui de mieux détecter certains comportements particuliers,
+comme des modifications sur des groupes spécifiques ou l’absence de remontée de certains
+événements attendus. Cela apporte une meilleure visibilité sur l’environnement IAM et facilite
+le suivi des actions réalisées.<br><br>
+
+Le développement de workflows liés à la génération automatique de rapports a également
+permis de simplifier certaines demandes réalisées par les équipes internes. Des informations
+qui demandaient auparavant plusieurs manipulations peuvent désormais être récupérées plus
+rapidement grâce aux automatisations mises en place.<br><br>
+
+Au quotidien, l’ensemble de ces ajustements rend les processus IAM plus fluides et plus
+faciles à exploiter pour l’équipe. Les workflows permettent également de conserver une
+meilleure traçabilité des actions effectuées, ce qui représente un élément important dans le
+cadre de la gestion des accès et de la sécurité du système d’information.<br><br>
+
+Avec le temps, j’ai également gagné en autonomie sur ces sujets. Aujourd’hui, les demandes
+de modification ou d’évolution discutées lors des réunions IAM peuvent être traitées plus
+rapidement, ce qui permet à l’équipe de faire évoluer les workflows et les processus plus
+efficacement.<br><br>
+
+Dans l’ensemble, les retours de l’équipe sont positifs. Les modifications réalisées répondent
+aux besoins exprimés et s’intègrent correctement dans l’environnement existant. Comme
+dans tout travail de développement ou d’automatisation, certains ajustements ou corrections
+peuvent parfois être nécessaires après les phases de tests, mais cela fait partie du processus
+normal d’amélioration continue des workflows et des processus IAM.
 </p>
 
 <br><br>
@@ -183,27 +246,47 @@ d’information.
 <h2 style="margin-top:50px;">Bilan personnel</h2>
 
 <p>
-Cette expérience m'a vraiment beaucoup apportée. Au cours de mon alternance, j'ai pris de
-l'assurance et je me suis investi toujours plus dans la gestion des workflows et des
-processus IAM. Aujourd'hui, je me sens à l'aise dans ce domaine et je pense saisir bien
-mieux les défis de la gestion des identités et des accès au sein d'une grande structure
-comme Emeria.<br><br>
-Il est d'ailleurs fort probable que je continue sur cette voie l'année prochaine chez Foncia,
-toujours dans l'équipe de ma responsable. Je devrais poursuivre ma collaboration avec
-l'équipe IAM et m'impliquer encore plus sur les workflows Okta et les évolutions des accès.
-Cette perspective me motive énormément, car j'aime vraiment ce type de missions et les
-questions qu'elles soulèvent.<br><br>
-Personnellement, je suis assez content du chemin parcouru. Quand je regarde les différents
-workflows sur lesquels j'ai travaillé, j'ai le sentiment d'avoir apporté ma contribution. Même si
-certains ajustements peuvent paraître mineurs pris individuellement, c'est l'ensemble de ces
-améliorations qui fait tourner le système de gestion des accès.<br><br>
-Au fur et à mesure, j'ai pris de plus en plus de plaisir à traiter les demandes de modifications
-et à participer à l'évolution des workflows. C'est un travail qui demande d'écouter les besoins
-des équipes, d'analyser les processus en place et de trouver des solutions.<br><br>
-Enfin, cette immersion m'a permis de poser de bonnes bases sur la plateforme Okta et les
-mécanismes de l'IAM. J'ai envie d'approfondir ces compétences, peut-être en suivant des
-formations ou en préparant des certifications, pour gagner encore en maîtrise sur cet
-environnement technique.
+Cette expérience m’a énormément apporté, aussi bien sur le plan technique que sur le plan
+professionnel. Au début de mon alternance, l’environnement Okta Workflows me paraissait
+assez complexe, notamment à cause du fonctionnement visuel des workflows et du nombre
+important de processus déjà existants. Comprendre la logique de certains workflows
+demandait du temps et beaucoup d’analyse, surtout lorsqu’ils contenaient de nombreuses
+conditions ou interactions avec d’autres services.<br><br>
+
+Avec le temps, j’ai gagné en assurance et en autonomie. Aujourd’hui, je suis capable
+d’analyser un besoin exprimé par l’équipe IAM, de comprendre rapidement les impacts
+potentiels sur les workflows existants puis de proposer des solutions adaptées. J’ai aussi
+beaucoup progressé dans ma manière d’aborder les problématiques techniques. Avant de
+modifier un workflow, je prends désormais davantage de recul afin d’anticiper les impacts
+possibles sur les autres processus liés à la gestion des accès.<br><br>
+
+Cette réalisation m’a également permis de mieux comprendre les enjeux concrets liés à la
+gestion des identités et des accès dans une grande entreprise. Même lorsqu’une
+modification paraît relativement simple, elle peut avoir un impact important sur les accès des
+utilisateurs ou sur certains processus métiers. Cela m’a appris à travailler avec davantage de
+rigueur et à accorder une grande importance aux phases de tests et de validation avant la
+mise en production.<br><br>
+
+Le fait d’avoir participé au développement, à la modification ou à l’amélioration d’un nombre
+important de workflows m’a aussi permis d’acquérir une vision plus globale de l’écosystème
+IAM de l’entreprise. J’ai appris à mieux comprendre les interactions entre les différents outils,
+les groupes, les comptes utilisateurs et les automatisations mises en place dans Okta.<br><br>
+
+Les lendemains de ce projet sont également très intéressants pour moi. L’année prochaine,
+je vais très probablement continuer à travailler sur Okta et sur les workflows IAM au sein de
+l’équipe. Cela va me permettre de continuer à approfondir mes compétences sur cette
+plateforme, mais aussi de participer à des projets plus importants et à des automatisations
+encore plus avancées. J’aimerais également continuer à me former sur les sujets liés à l’IAM
+et potentiellement préparer certaines certifications autour d’Okta afin de gagner encore en
+maîtrise sur cet environnement technique.<br><br>
+
+Avec un regard critique, je pense également qu’il me reste encore plusieurs axes
+d’amélioration. Certains workflows très complexes nécessitent encore beaucoup d’analyse et
+d’expérience afin d’être modifiés de manière totalement autonome. De plus, l’environnement
+Okta évolue régulièrement avec l’ajout de nouvelles fonctionnalités et de nouvelles méthodes
+d’intégration, ce qui demande une veille technique constante. Malgré cela, cette expérience
+m’a permis de progresser énormément et représente aujourd’hui l’une des réalisations les
+plus importantes et formatrices de mon alternance.
 </p>
 
 </section>
