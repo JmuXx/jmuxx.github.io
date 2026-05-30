@@ -67,56 +67,14 @@ seuils adaptés en fonction du contexte.
 <br><br>
 <hr>
 
-<h2 style="margin-top:50px;">Moyens mis en œuvre</h2>
-
-<p>
-Avant de commencer le développement, j’ai d’abord pris le temps de bien comprendre le
-besoin en échangeant avec l’équipe sécurité. Cela m’a permis d’identifier les différentes log
-sources utilisées ainsi que leurs spécificités, notamment en termes de fréquence d’envoi et
-de type de flux. J’ai également travaillé sur la définition de critères d’inactivité pertinents, en
-tenant compte du fait que certaines sources envoient des logs très régulièrement, tandis que
-d’autres fonctionnent sur des périodes plus espacées.<br><br>
-Le développement s’est ensuite appuyé sur un script principal en Python, que j’ai structuré
-de manière à pouvoir traiter efficacement les données issues des logs. Pour cela, j’ai utilisé
-plusieurs bibliothèques comme os et datetime pour la gestion des fichiers et du temps,
-pandas pour le traitement et l’analyse des données, ainsi que smtplib et email.message
-pour l’envoi automatique d’alertes par email. J’ai également utilisé configparser afin de
-mettre en place un fichier de configuration permettant d’ajuster facilement les paramètres du
-script sans modifier directement le code. D’autres bibliothèques comme matplotlib ou
-seaborn m’ont permis de visualiser l’activité des log sources et d’analyser leur
-comportement dans le temps.<br><br>
-Le script s’appuie également sur l’exploitation d’une base de données PostgreSQL
-contenant un volume important de logs, ce qui m’a amené à travailler sur des jeux de
-données conséquents et à adapter le traitement en conséquence. À terme, ce système a
-vocation à s’appuyer davantage sur des données en temps réel.<br><br>
-Pour tester la solution, j’ai mis en place plusieurs scénarios simulant des situations réelles,
-comme des flux réguliers, des arrêts brutaux ou encore des retards ponctuels. Ces tests
-m’ont permis d’ajuster progressivement le comportement du système et d’améliorer la
-pertinence des alertes. J’ai également sollicité régulièrement l’équipe sécurité afin de
-recueillir des retours et adapter la solution en fonction de leurs besoins.
-</p>
+<h2 style="margin-top:50px;">Étapes de réalisation</h2> <p> Avant de commencer le développement, j’ai d’abord pris le temps de comprendre le fonctionnement global de l’infrastructure de collecte de logs utilisée par l’équipe sécurité. J’ai échangé avec les membres de l’équipe afin d’identifier les différentes logsources utilisées, leur fréquence d’envoi ainsi que les problèmes déjà rencontrés dans le passé. Cela m’a permis de mieux comprendre les enjeux liés à la supervision des flux de logs et les conséquences possibles lorsqu’une logsources devient inactive sans être détectée rapidement.<br><br> J’ai ensuite travaillé sur la définition de critères permettant d’identifier automatiquement une source inactive. Cette étape était importante car toutes les logsources ne fonctionnent pas de la même manière. Certaines génèrent des événements en continu tandis que d’autres n’envoient des données qu’à certains moments de la journée. J’ai donc dû réfléchir à une logique suffisamment flexible pour éviter de générer trop de faux positifs.<br><br> Une fois cette phase d’analyse terminée, j’ai commencé le développement du script principal en Python. J’ai structuré le projet de manière à séparer les différentes parties du traitement afin de faciliter la maintenance et les futures évolutions. Pour cela, j’ai utilisé plusieurs bibliothèques Python comme pandas pour le traitement des données, datetime pour la gestion du temps, psycopg2 pour les échanges avec PostgreSQL ainsi que smtplib et email.message pour l’envoi automatique d’alertes par email.<br><br> Le système s’appuie sur une base de données PostgreSQL contenant un volume important de logs. J’ai donc dû apprendre à manipuler des ensembles de données conséquents et optimiser certaines requêtes afin d’éviter des temps de traitement trop importants. J’ai également développé un système de configuration avec configparser afin de permettre à l’équipe de modifier facilement certains paramètres, comme les seuils de détection ou les logsources surveillées, sans avoir besoin de modifier directement le code.<br><br> Afin d’apporter des éléments visuels facilitant l’analyse, j’ai également développé plusieurs graphiques avec matplotlib et seaborn permettant de visualiser l’activité des logsources dans le temps. Ces représentations permettaient par exemple d’identifier rapidement des périodes d’inactivité anormales ou certaines sources devenues complètement muettes.<br><br> Tout au long du projet, j’ai réalisé plusieurs tests afin de vérifier le comportement du système dans des situations différentes. J’ai simulé des arrêts brutaux de collecte, des retards d’envoi ou encore des logsources volontairement inactives afin de vérifier si les alertes générées étaient cohérentes. Ces tests m’ont permis d’ajuster progressivement les seuils de détection et d’améliorer la pertinence des résultats.<br><br> J’ai également échangé régulièrement avec l’équipe sécurité afin de recueillir leurs retours sur les alertes générées et adapter le fonctionnement du système à leurs besoins réels. Cela m’a permis de faire évoluer le projet progressivement vers une solution plus exploitable au quotidien.<br><br> Avec le temps, le projet a continué à évoluer durant mon alternance. J’ai ajouté plusieurs améliorations, notamment une meilleure gestion des faux positifs, des optimisations sur certaines requêtes SQL ainsi qu’une amélioration de la génération des rapports et des alertes envoyées automatiquement. </p>
 
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Résultats obtenus</h2>
 
-<p>
-Le système développé permet aujourd’hui de détecter rapidement les interruptions de
-collecte sur certaines log sources critiques, ce qui réduit considérablement le temps de
-réaction de l’équipe sécurité. Dans plusieurs cas, des arrêts de flux ont pu être identifiés en
-moins de 24 heures, alors qu’ils seraient auparavant passés inaperçus plus longtemps.<br><br>
-La solution permet également d’avoir une meilleure visibilité sur l’activité des log sources,
-notamment en mettant en évidence des comportements anormaux ou des sources
-devenues inactives. Cela a permis d’identifier certaines log sources qui ne communiquaient
-plus depuis un certain temps, ainsi que d’autres sources entièrement dites “muettes”.<br><br>
-Comme tout système de détection, des faux positifs peuvent encore apparaître. Un travail
-est donc en cours pour affiner les règles de détection et mieux classer les log sources afin
-d’améliorer la précision globale du système.<br><br>
-Enfin, une documentation a été réalisée afin de faciliter la prise en main de l’outil par les
-équipes. Aujourd’hui encore, la solution continue d’être améliorée et adaptée en fonction des
-besoins, ce qui montre son utilité dans le contexte de l’entreprise.
-</p>
+<p> Le système développé permet aujourd’hui de détecter rapidement les interruptions de collecte sur certaines logsources critiques, ce qui réduit considérablement le temps de réaction de l’équipe sécurité. Dans plusieurs cas, des arrêts de flux ont pu être identifiés en moins de 24 heures alors qu’ils seraient auparavant passés inaperçus plus longtemps.<br><br> La solution permet également d’avoir une meilleure visibilité sur l’activité des logsources, notamment en mettant en évidence des comportements anormaux ou des sources devenues inactives. Cela a permis d’identifier certaines logsources qui ne communiquaient plus depuis un certain temps ainsi que d’autres sources entièrement muettes.<br><br> Les graphiques et rapports générés facilitent également l’analyse globale de l’activité des flux et permettent à l’équipe sécurité de mieux suivre l’état des différentes sources surveillées.<br><br> Comme tout système de détection, des faux positifs peuvent encore apparaître. Un travail est donc toujours en cours afin d’améliorer les règles de détection et d’affiner certains comportements spécifiques selon les logsources.<br><br> Enfin, une documentation complète a été réalisée afin de faciliter la prise en main du projet par les équipes. Aujourd’hui encore, la solution continue d’être utilisée et améliorée, ce qui montre son utilité dans le contexte de l’entreprise. </p>
 
 <br><br>
 <hr>
@@ -158,18 +116,7 @@ une solution pertinente et exploitable.
 
 <h2 style="margin-top:50px;">Bilan personnel</h2>
 
-<p>
-Ce projet m’a beaucoup apporté, notamment sur le plan technique. J’ai pu travailler sur un
-cas concret impliquant de gros volumes de données et comprendre les enjeux liés à la
-fiabilité des logs dans un environnement professionnel.<br><br>
-Il m’a aussi permis de mieux comprendre le fonctionnement global d’un SIEM comme
-QRadar et l’importance de la qualité des données utilisées pour la détection d’incidents. J’ai
-également pris conscience qu’au-delà de la technique, il est essentiel de proposer des
-solutions simples à utiliser et faciles à maintenir pour les équipes.<br><br>
-Enfin, ce projet m’a permis de gagner en autonomie et en organisation. Le fait que la
-solution soit toujours utilisée aujourd’hui et continue d’évoluer est quelque chose de très
-motivant, car cela montre qu’elle répond à un réel besoin.
-</p>
+<p> Ce projet m’a beaucoup apporté, notamment sur le plan technique. J’ai pu travailler sur un cas concret impliquant de gros volumes de données et comprendre les enjeux liés à la fiabilité des logs dans un environnement professionnel réel.<br><br> Il m’a également permis de mieux comprendre le fonctionnement global d’un SIEM comme QRadar et l’importance de la qualité des données utilisées pour la détection d’incidents. J’ai aussi pris conscience qu’au-delà de la technique, il est essentiel de proposer des solutions simples à utiliser, maintenables et réellement adaptées aux besoins des équipes.<br><br> Avec le temps, ce projet m’a permis de gagner en autonomie, en rigueur et en organisation. Le fait que la solution soit toujours utilisée aujourd’hui et continue d’évoluer est particulièrement motivant, car cela montre qu’elle répond à un réel besoin opérationnel au sein de l’entreprise.<br><br> Concernant les lendemains du projet, plusieurs améliorations restent possibles. L’objectif serait notamment d’améliorer encore la détection des faux positifs, d’intégrer davantage de traitement en temps réel et de rendre les tableaux de suivi plus complets et interactifs. Le projet pourrait également être étendu à d’autres types de flux ou intégré plus directement dans les outils de supervision utilisés par l’équipe sécurité.<br><br> Avec un regard critique, je pense également que certaines parties du système pourraient encore être optimisées, notamment au niveau des performances sur les traitements les plus volumineux ou sur la gestion de certaines logsources ayant des comportements très irréguliers. Si je devais reprendre le projet aujourd’hui avec davantage d’expérience, je pense que je structurerais certains composants différemment afin de rendre la solution encore plus maintenable et évolutive sur le long terme.<br><br> Malgré cela, ce projet reste l’une des expériences les plus formatrices de mon parcours, car il m’a permis de travailler sur une problématique concrète ayant un réel impact dans un environnement professionnel. </p>
 
 </section>
 
