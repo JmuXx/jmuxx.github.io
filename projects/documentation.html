@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,9 +23,9 @@
 
 <section class="home-section2" style="text-align:left;">
 
-<h1 style="font-size:48px; margin-bottom:10px;">Automatisation de la
-documentation et mise en place d’un système de
-contrôle des workflows Okta</h1>
+<h1 style="font-size:48px; margin-bottom:10px;">
+Automatisation de la documentation et mise en place d’un système de contrôle des workflows Okta
+</h1>
 
 <br><br>
 <hr>
@@ -32,53 +33,112 @@ contrôle des workflows Okta</h1>
 <h2 style="margin-top:50px;">Contexte</h2>
 
 <p>
-Dans la continuité de mon travail sur Okta et sur les workflows IAM, j’ai également été
-amené à travailler sur un sujet plus orienté organisation et suivi interne. Avec le temps, le
-nombre de workflows présents dans l’environnement a augmenté, tout comme les
-demandes de modifications, les évolutions et les nouveaux besoins.<br><br>
-Dans ce contexte, il devenait important d’avoir une documentation claire et à jour des
-workflows existants. Une gestion uniquement manuelle pouvait vite devenir chronophage et
-entraîner certains oublis, notamment lorsqu’un workflow est modifié ou qu’un nouveau est
-créé.<br><br>
-J’ai donc participé à la mise en place d’un système automatisé permettant à la fois de
-documenter les workflows et de contrôler la cohérence entre l’environnement réel et les
-informations renseignées dans les fichiers de suivi.
+Dans la continuité de mon travail sur Okta et sur les workflows IAM, j’ai également été amené
+à travailler sur un sujet davantage orienté organisation, suivi interne et fiabilisation des processus.
+Avec le temps, le nombre de workflows présents dans l’environnement Okta a fortement augmenté,
+tout comme les demandes de modifications, les évolutions fonctionnelles et les besoins liés à la
+gestion des accès.<br><br>
+
+L’environnement IAM utilisé par l’entreprise repose aujourd’hui sur plusieurs centaines de workflows
+ayant chacun un rôle précis dans la gestion des identités, des groupes, des accès ou encore des
+automatisations liées aux processus métiers. Dans ce contexte, il devenait important de disposer
+d’une documentation claire, centralisée et régulièrement mise à jour afin de conserver une bonne
+visibilité sur l’environnement existant.<br><br>
+
+Le suivi manuel de ces workflows devenait progressivement difficile à maintenir. Lorsqu’un workflow
+était modifié, renommé, désactivé ou supprimé, il existait un risque d’oubli ou d’incohérence entre
+l’environnement réel et les fichiers de documentation utilisés par l’équipe. Cela pouvait compliquer
+la maintenance, le suivi des évolutions ou encore certaines opérations de contrôle.<br><br>
+
+Afin d’améliorer cette situation, j’ai participé à la mise en place d’un système automatisé permettant
+à la fois de générer une documentation détaillée des workflows présents dans Okta et de mettre
+en place un mécanisme de contrôle capable de vérifier automatiquement certaines cohérences
+entre les workflows réels et les informations renseignées dans les fichiers de suivi.
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Objectifs</h2>
 
 <p>
-L’objectif principal était de centraliser les informations importantes liées aux workflows dans
-un fichier de documentation simple à exploiter par l’équipe.<br><br>
-Il fallait également faciliter le suivi des modifications réalisées dans le temps, afin de garder
-un historique clair des changements apportés sur les workflows.<br><br>
-Enfin, le projet avait aussi pour but de mettre en place un système de contrôle capable de
-vérifier automatiquement certaines cohérences, par exemple s’assurer qu’un workflow
-modifié est bien renseigné dans la documentation.
+L’objectif principal de cette réalisation était de centraliser les informations importantes liées aux
+workflows Okta dans un fichier de documentation unique, clair et facilement exploitable par
+l’équipe IAM.<br><br>
+
+Il était également important de faciliter le suivi des modifications réalisées dans le temps afin de
+conserver un historique précis des évolutions apportées sur les workflows. Chaque changement
+important devait pouvoir être retracé, qu’il s’agisse d’une création, d’une modification ou encore
+de la suppression d’un workflow existant.<br><br>
+
+Le projet avait aussi pour objectif de réduire les tâches manuelles liées à la mise à jour de la
+documentation. L’idée était d’éviter qu’un oubli humain puisse entraîner un écart entre la réalité
+de l’environnement Okta et les informations documentées.<br><br>
+
+Enfin, un autre objectif important était de mettre en place un système de contrôle automatisé
+capable de détecter certaines incohérences dans l’environnement IAM. Cela incluait par exemple
+la détection de workflows modifiés mais non documentés, de workflows présents dans Okta mais
+absents du fichier de suivi, ou encore des différences de dates entre les informations réelles et
+les données documentées.
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Moyens mis en œuvre</h2>
 
 <p>
-Pour répondre à ce besoin, j’ai développé plusieurs scripts en Python permettant
-d’automatiser la récupération et l’organisation des informations liées aux workflows Okta.<br><br>
-Une première partie du script permettait d’alimenter automatiquement un fichier Excel
-servant de documentation. On y retrouvait notamment différentes informations utiles comme
-le nom du workflow, sa date de création, ou d’autres éléments nécessaires au suivi global.<br><br>
-Une deuxième page du fichier était dédiée au suivi des modifications. Lorsqu’un
-changement était réalisé sur un workflow, il pouvait être renseigné afin de conserver une
-trace des évolutions dans le temps.<br><br>
-J’ai ensuite développé un système de contrôle venant comparer les workflows présents
-dans Okta avec les informations présentes dans le fichier Excel. Cela permettait par
-exemple de vérifier qu’un workflow ayant été modifié correspond bien à un élément
-documenté, ou de repérer certaines incohérences.<br><br>
-Pour réaliser cela, j’ai utilisé Python ainsi que différentes bibliothèques comme pandas pour
-le traitement des données, openpyxl pour la gestion du fichier Excel, requests pour certaines
-interactions API et datetime pour la gestion des dates.
+Pour répondre à ce besoin, j’ai développé plusieurs scripts en Python permettant d’automatiser
+la récupération, le traitement et l’organisation des informations liées aux workflows Okta.<br><br>
+
+La première étape du projet a consisté à comprendre la structure des données renvoyées par
+l’API Okta Workflows. Les informations des workflows sont récupérées sous la forme de fichiers
+JSON particulièrement volumineux et complexes contenant de nombreuses données liées aux
+workflows, à leurs paramètres ou encore à leur structure interne. J’ai donc dû analyser ces
+données et développer une logique de parsing permettant d’extraire uniquement les informations
+utiles pour le suivi et la documentation.<br><br>
+
+Le script développé génère automatiquement un fichier Excel contenant plusieurs pages de suivi.
+La première page regroupe l’ensemble des workflows présents dans l’environnement avec un
+grand nombre d’informations utiles comme le nom du workflow, son chemin d’accès, sa date
+de création, sa date de dernière modification, les éventuels sous-flows associés ainsi que
+plusieurs autres éléments permettant d’avoir une vue globale de l’environnement.<br><br>
+
+Une deuxième page du fichier est dédiée au suivi des modifications réalisées sur les workflows.
+On y retrouve notamment les évolutions apportées, leur date, le ticket concerné ainsi que le type
+de modification effectué, par exemple une création, une modification ou une suppression. Cette
+partie permet de conserver un historique clair des changements réalisés dans le temps.<br><br>
+
+En parallèle, j’ai développé un système de contrôle venant comparer automatiquement les
+informations présentes dans Okta avec celles présentes dans le fichier de documentation.
+L’objectif était de détecter rapidement certaines incohérences ou oublis pouvant apparaître lors
+des évolutions mensuelles de l’environnement.<br><br>
+
+Le contrôle permet notamment de vérifier qu’un workflow modifié au cours du dernier mois est
+bien documenté dans le fichier de suivi, qu’un workflow supprimé n’apparaît plus dans les
+extractions suivantes ou encore que les dates de modification sont cohérentes entre Okta et
+la documentation. Il permet également d’identifier des workflows présents dans Okta mais absents
+du fichier de suivi, ou inversement.<br><br>
+
+Le système permet aussi de remonter certains points de contrôle complémentaires comme la
+présence éventuelle de workflows désactivés ou certaines incohérences liées au nommage.
+Même si certaines vérifications restent encore perfectibles, le projet a été pensé de manière
+modulaire afin de pouvoir ajouter facilement de nouveaux contrôles dans le futur.<br><br>
+
+Une fois les vérifications réalisées, le script génère automatiquement un rapport envoyé par
+email afin de transmettre les résultats du contrôle à l’équipe. Aujourd’hui, environ 250 workflows
+sont suivis par ce système de documentation et de contrôle.<br><br>
+
+Le script de génération de la documentation est exécuté automatiquement une fois par mois,
+puis le système de contrôle est lancé après la génération afin de comparer les données et
+identifier les éventuelles incohérences.<br><br>
+
+Ce projet m’a également amené à identifier une anomalie directement liée au fonctionnement
+d’Okta. Lors des premiers contrôles réalisés, j’ai remarqué que certaines modifications effectuées
+sur des workflows ne mettaient pas correctement à jour leur date de dernière modification dans
+les données renvoyées par l’API. Cette incohérence a conduit à l’ouverture d’un échange avec
+les équipes Okta afin d’analyser le problème. Après investigation, le comportement a été corrigé,
+ce qui a permis d’améliorer la fiabilité globale du suivi des workflows.
 </p>
 
 <br><br>
@@ -87,15 +147,30 @@ interactions API et datetime pour la gestion des dates.
 <h2 style="margin-top:50px;">Résultats obtenus</h2>
 
 <p>
-Cette solution a permis d’améliorer le suivi global des workflows utilisés par l’équipe IAM.<br><br>
-La documentation est devenue plus simple à maintenir et plus fiable qu’un suivi entièrement
-manuel. Les informations importantes sont regroupées dans un seul fichier clair et
-facilement exploitable.<br><br>
-Le système de contrôle permet également d’identifier plus rapidement certains écarts entre
-la documentation et la réalité de l’environnement, ce qui réduit les oublis et facilite la
-maintenance.<br><br>
-Enfin, cette automatisation a permis de gagner du temps sur plusieurs tâches répétitives,
-tout en apportant un meilleur niveau de rigueur dans le suivi des workflows.
+Cette solution a permis d’améliorer de manière importante le suivi global des workflows utilisés
+par l’équipe IAM.<br><br>
+
+La documentation est devenue beaucoup plus simple à maintenir et plus fiable qu’un suivi
+entièrement manuel. Les informations importantes sont désormais regroupées dans un seul
+fichier clair, structuré et facilement exploitable par les membres de l’équipe.<br><br>
+
+L’automatisation a également permis de réduire les risques d’oublis lors des évolutions des
+workflows. Grâce au système de contrôle, certaines incohérences peuvent être détectées
+rapidement avant qu’elles ne deviennent problématiques pour le suivi ou la maintenance de
+l’environnement.<br><br>
+
+Le système permet aujourd’hui de vérifier chaque mois qu’un workflow modifié est bien documenté,
+que les informations importantes restent cohérentes et que les changements réalisés dans
+l’environnement correspondent bien aux éléments déclarés dans le suivi interne.<br><br>
+
+Le projet a également permis d’améliorer la visibilité globale sur l’environnement Okta utilisé
+par l’équipe IAM. Avec près de 250 workflows suivis automatiquement, il devient plus simple
+d’identifier les workflows récemment modifiés, ceux devenus inactifs ou encore certains écarts
+de configuration.<br><br>
+
+Enfin, cette réalisation a permis de gagner du temps sur plusieurs tâches répétitives tout en
+renforçant le niveau de rigueur dans le suivi des workflows. Les contrôles automatisés apportent
+un niveau de fiabilité supplémentaire qui facilite la maintenance et l’évolution de l’environnement.
 </p>
 
 <br><br>
@@ -103,47 +178,98 @@ tout en apportant un meilleur niveau de rigueur dans le suivi des workflows.
 
 <h2 style="margin-top:50px;">Compétences mobilisées</h2>
 
-<p style="font-size: 25px"><strong>Compétences techniques :</strong></p>
+<p style="font-size: 25px">
+<strong>Compétences techniques :</strong>
+</p>
+
 <br>
 
 <p>
-• <a href="../skills/scripting-automatisation.html" style="font-weight: bold;text-decoration: underline;">Scripting et automatisation</a> : développement d’un script Python permettant de
-détecter automatiquement les interruptions de flux de logs et d’envoyer des alertes
-sans intervention manuelle.<br>
+• <a href="../skills/scripting-automatisation.html" style="font-weight: bold;text-decoration: underline;">Scripting et automatisation</a> :
+développement de plusieurs scripts Python permettant d’automatiser la récupération,
+la génération de documentation et le contrôle des workflows Okta.<br><br>
 
-•  <a href="../skills/gestion-configuration.html" style="font-weight: bold;text-decoration: underline;">Gestion de la configuration</a> : mise en place d’un suivi structuré des workflows et
-maintien d’une documentation exploitable dans le temps.<br>
-•  <a href="../skills/logique-maths.html" style="font-weight: bold;text-decoration: underline;">Algèbre, statistiques, théorie des nombres, logique mathématique</a> : utilisation
-de logiques de comparaison, de vérification et de contrôle automatisé dans le
-développement du système.<br>
-•  <a href="../skills/developpement-fullstack.html" style="font-weight: bold;text-decoration: underline;">Développement Full Stack</a> : mise en place d’une logique complète de génération et de contrôle de documentation, incluant le traitement des données et leur structuration afin de produire une documentation exploitable.
+• <a href="../skills/gestion-configuration.html" style="font-weight: bold;text-decoration: underline;">Gestion de la configuration</a> :
+mise en place d’un suivi structuré des workflows et d’un système de contrôle permettant
+de maintenir une documentation fiable dans le temps.<br><br>
+
+• <a href="../skills/logique-maths.html" style="font-weight: bold;text-decoration: underline;">Algèbre, statistiques, théorie des nombres, logique mathématique</a> :
+utilisation de logiques de comparaison, de vérification et de contrôle automatisé afin
+de détecter certaines incohérences dans l’environnement.<br><br>
+
+• <a href="../skills/developpement-fullstack.html" style="font-weight: bold;text-decoration: underline;">Développement Full Stack</a> :
+mise en place d’une logique complète de traitement de données, de génération de
+documentation et de création de rapports exploitables par l’équipe IAM.<br><br>
+
+• <a href="../skills/analyse-resolution.html" style="font-weight: bold;text-decoration: underline;">Analyse et résolution de problèmes</a> :
+analyse des données issues de l’API Okta, identification d’incohérences et mise en
+place de solutions permettant de fiabiliser le suivi des workflows.
 </p>
+
 <br><br>
-<p style="font-size: 25px"><strong>Compétences humaines :</strong></p>
-<br>
-<p>
-• <a href="../skills/travail-equipe.html" style="font-weight: bold;text-decoration: underline;">Travail en équipe</a> : réalisation d’un outil répondant à un besoin concret de suivi pour
-l’équipe IAM.<br>
-• <a href="../skills/responsabilites.html" style="font-weight: bold;text-decoration: underline;">Sens des responsabilités</a> : travail sur des éléments utilisés au quotidien pour la
-gestion et la maintenance des workflows.<br>
-• <a href="../skills/empathie-ecoute.html" style="font-weight: bold;text-decoration: underline;">Empathie et à l’écoute</a> : prise en compte des besoins des utilisateurs lors de la structuration de la documentation afin de la rendre claire, compréhensible et facilement exploitable.
+
+<p style="font-size: 25px">
+<strong>Compétences humaines :</strong>
 </p>
+
+<br>
+
+<p>
+• <a href="../skills/travail-equipe.html" style="font-weight: bold;text-decoration: underline;">Travail en équipe</a> :
+développement d’un outil répondant à un besoin concret de suivi et de maintenance
+pour l’équipe IAM.<br><br>
+
+• <a href="../skills/responsabilites.html" style="font-weight: bold;text-decoration: underline;">Sens des responsabilités</a> :
+travail sur des éléments utilisés quotidiennement pour la gestion des workflows et la
+maintenance de processus critiques liés aux accès utilisateurs.<br><br>
+
+• <a href="../skills/adaptabilite.html" style="font-weight: bold;text-decoration: underline;">Adaptabilité</a> :
+capacité à faire évoluer progressivement le système de contrôle afin de prendre en
+compte de nouveaux besoins ou de nouvelles vérifications.<br><br>
+
+• <a href="../skills/empathie-ecoute.html" style="font-weight: bold;text-decoration: underline;">Empathie et à l’écoute</a> :
+prise en compte des besoins de l’équipe lors de la structuration de la documentation
+afin de proposer un suivi clair, compréhensible et réellement exploitable au quotidien.
+</p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Bilan personnel</h2>
 
 <p>
-Cette réalisation m’a permis de comprendre qu’au-delà de la technique pure, l’organisation
-et la qualité du suivi interne sont également très importantes dans un environnement
-professionnel.<br><br>
-J’ai apprécié travailler sur un sujet concret, utile au quotidien et directement exploitable par
-l’équipe. C’est le type de projet où l’on voit rapidement l’intérêt de ce que l’on développe.<br><br>
-Cela m’a aussi permis de continuer à progresser en Python sur des cas réels, notamment
-autour de l’automatisation, du traitement de données et de la fiabilisation de processus
-existants.<br><br>
-Enfin, ce projet m’a montré que des améliorations parfois simples en apparence peuvent
-avoir un réel impact lorsqu’elles répondent à un besoin précis.
+Cette réalisation m’a permis de comprendre qu’au-delà du développement technique pur,
+l’organisation, le suivi et la qualité de la documentation jouent un rôle très important dans un
+environnement professionnel, surtout lorsqu’il s’agit de systèmes liés à la gestion des accès
+et à la sécurité.<br><br>
+
+Ce projet m’a également permis de continuer à progresser techniquement en Python sur des
+cas concrets impliquant du traitement de données, de l’automatisation, de l’analyse de JSON,
+de l’utilisation d’API et de la génération de fichiers exploitables par une équipe métier.<br><br>
+
+J’ai particulièrement apprécié le fait de travailler sur un projet directement utile au quotidien.
+Contrairement à certains développements plus théoriques, celui-ci avait un impact immédiat
+et visible pour l’équipe IAM, ce qui était très motivant.<br><br>
+
+Cette expérience m’a aussi permis de développer davantage ma rigueur. Travailler sur des
+systèmes de contrôle m’a obligé à réfléchir à de nombreux cas particuliers et à prendre en
+compte les risques d’erreurs ou d’incohérences pouvant apparaître dans le temps.<br><br>
+
+Le fait d’avoir identifié une anomalie directement liée au fonctionnement d’Okta a également
+été très formateur. Cela m’a montré qu’il est important de toujours garder un regard critique
+sur les outils utilisés, même lorsqu’ils proviennent d’éditeurs reconnus. Cette situation m’a
+permis de mieux comprendre l’importance des phases de vérification et de validation dans
+un environnement professionnel.<br><br>
+
+Avec le recul, je pense que ce projet pourrait encore évoluer dans le futur. Plusieurs contrôles
+supplémentaires pourraient être ajoutés, notamment autour des erreurs de nommage, des
+doublons ou encore de certaines vérifications avancées sur la structure des workflows.
+L’architecture actuelle du projet a justement été pensée pour pouvoir intégrer facilement de
+nouvelles fonctionnalités.<br><br>
+
+Enfin, cette réalisation a renforcé mon intérêt pour les sujets liés à l’automatisation et à la
+fiabilisation des processus IAM. C’est un domaine dans lequel je souhaite continuer à progresser,
+car il combine à la fois développement, logique, organisation et sécurité.
 </p>
 
 </section>
@@ -154,3 +280,4 @@ avoir un réel impact lorsqu’elles répondent à un besoin précis.
 
 </body>
 </html>
+```
