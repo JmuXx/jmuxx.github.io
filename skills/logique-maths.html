@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logique Math - Portfolio Soulier Jim</title>
+<title>Logique Mathématique - Portfolio Soulier Jim</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -22,8 +22,9 @@
 
 <section class="home-section2" style="text-align:left;">
 
-<h1 style="font-size:48px; margin-bottom:10px;">Algèbre, statistiques, théorie des
-nombres, logique mathématique</h1>
+<h1 style="font-size:48px; margin-bottom:10px;">
+Algèbre, statistiques, théorie des nombres, logique mathématique
+</h1>
 
 <br><br>
 <hr>
@@ -31,46 +32,120 @@ nombres, logique mathématique</h1>
 <h2 style="margin-top:50px;">Ma définition</h2>
 
 <p>
-Cette compétence regroupe les bases mathématiques utilisées en informatique, notamment
-l’algèbre, les statistiques, la logique et certains aspects de la théorie des nombres. Elle
-permet de structurer un raisonnement, d’analyser des données et de comprendre des
-mécanismes sous-jacents à certains systèmes informatiques.<br><br>
-Dans un contexte professionnel, ces notions sont particulièrement utiles pour traiter des
-données, construire des logiques fiables et comprendre certains principes liés à la sécurité
-ou à l’analyse.
+Cette compétence regroupe les bases mathématiques utilisées en informatique,
+notamment l’algèbre, les statistiques, la logique et certains aspects de la théorie des
+nombres. Elle permet de structurer un raisonnement, d’analyser des données et de
+comprendre des mécanismes sous-jacents à certains systèmes informatiques.<br><br>
+
+Dans un contexte professionnel, ces notions sont particulièrement utiles pour traiter
+des données, construire des logiques fiables et comprendre certains principes liés à la
+sécurité, au chiffrement ou encore à l’analyse de comportements anormaux.<br><br>
+
+En cybersécurité, ces compétences sont omniprésentes. Elles interviennent aussi bien
+dans le développement d’algorithmes, l’analyse de données, la cryptographie,
+l’automatisation de contrôles ou encore la résolution de problèmes complexes
+nécessitant une approche logique et structurée.
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Mes éléments de preuve</h2>
 
 <p>
-Au cours de ma formation et de mon alternance, j’ai été amené à mobiliser ces notions,
-notamment dans le cadre du développement du système d’analyse de logsources.<br><br>
-Le traitement des logs repose en grande partie sur l’analyse de données temporelles. J’ai dû
-manipuler des ensembles de données importants, identifier des tendances et définir des
-seuils permettant de détecter des anomalies. Cela m’a demandé d’appliquer une logique
-statistique simple afin de distinguer un comportement normal d’un comportement anormal.<br><br>
-La logique mathématique intervient également dans la structuration des scripts et des
-workflows. Que ce soit dans le développement en Python ou dans les workflows Okta, j’ai dû
-construire des conditions, enchaîner des règles et organiser des traitements de manière
-cohérente afin d’obtenir un comportement fiable.<br><br>
-Enfin, ces bases m’aident au quotidien dans ma manière de raisonner face à un problème.
-Elles me permettent de structurer mon analyse, de poser des hypothèses et de vérifier leur
-validité de manière logique.
+Au cours de mon alternance et de mes projets personnels, j’ai régulièrement mobilisé
+des notions liées à la logique mathématique, à l’analyse de données et à la théorie des
+nombres.<br><br>
+
+Dans le cadre du développement du système d’analyse de logsources chez Emeria,
+j’ai notamment dû manipuler des données temporelles afin de détecter des anomalies
+de comportement dans la collecte des logs. Cela impliquait d’analyser des volumes
+importants de données, de comparer des timestamps, de définir des seuils cohérents
+et de mettre en place des règles logiques permettant d’identifier des comportements
+anormaux sans générer trop de faux positifs.<br><br>
+
+Les workflows Okta m’ont également amené à utiliser énormément de logique
+conditionnelle. Certains workflows comportaient de nombreuses branches logiques,
+des conditions imbriquées et des comportements récursifs complexes. Dans plusieurs
+cas, il a fallu analyser précisément les différents cas possibles afin de garantir que les
+actions réalisées correspondent exactement au comportement attendu.<br><br>
+
+J’ai également réalisé plusieurs projets personnels
+liés à la cryptographie et à la théorie des nombres. Le projet le plus important sur ce
+sujet a été le développement d’un outil personnel inspiré de RSACTFTool, permettant
+de détecter et exploiter automatiquement certaines faiblesses dans des implémentations
+RSA vulnérables.<br><br>
+
+Ce projet, développé en Python, avait pour objectif d’automatiser la résolution de
+challenges de cryptographie de type RSA faible rencontrés dans certains CTF. Le
+programme analysait différents paramètres publics d’une clé RSA, comme le module
+n, l’exposant public e ou encore certaines relations mathématiques entre plusieurs
+clés, afin d’identifier automatiquement des vulnérabilités exploitables.<br><br>
+
+Le projet utilisait plusieurs concepts avancés de théorie des nombres, notamment la
+factorisation d’entiers, le calcul du PGCD, l’arithmétique modulaire, les inverses
+modulaires et certaines attaques classiques contre RSA faible.<br><br>
+
+J’ai notamment implémenté plusieurs techniques connues comme :<br><br>
+
+- la détection de facteurs communs entre plusieurs modules RSA via le calcul du
+PGCD ;<br>
+- l’exploitation de petits exposants publics ;<br>
+- certaines variantes d’attaques utilisant des modules partiellement liés ;<br>
+- ou encore des attaques sur des clés générées avec des paramètres trop faibles.<br><br>
+
+Le fonctionnement du programme reposait sur une suite d’analyses logiques
+successives. Lorsqu’une clé était fournie au programme, celui-ci testait plusieurs
+hypothèses mathématiques afin de déterminer si la clé était vulnérable à une attaque
+connue. Par exemple, dans le cas d’une attaque par facteur commun, le programme
+comparait automatiquement plusieurs modules RSA entre eux afin de détecter si deux
+clés partageaient accidentellement un même nombre premier.<br><br>
+
+Lorsqu’un facteur premier commun était trouvé, il devenait alors possible de
+reconstituer la clé privée en recalculant φ(n), puis l’inverse modulaire de l’exposant
+public. Une fois la clé privée reconstruite, le programme pouvait automatiquement
+déchiffrer le message chiffré associé.<br><br>
+
+Une partie importante du projet consistait également à structurer correctement les
+différentes attaques afin de sélectionner automatiquement les plus pertinentes selon
+les paramètres analysés. Cela demandait énormément de logique algorithmique et de
+raisonnement mathématique afin d’éviter des traitements inutiles ou trop coûteux.<br><br>
+
+Ce projet m’a permis de renforcer fortement ma compréhension concrète du
+fonctionnement interne de RSA et des mécanismes mathématiques utilisés en
+cryptographie moderne. Il m’a aussi appris à transformer des concepts théoriques en
+outils exploitables concrètement dans un programme fonctionnel.
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Mon autocritique</h2>
 
 <p>
-Je pense avoir un niveau correct dans ces domaines, notamment sur les aspects liés à la
-logique et aux statistiques appliquées. Je suis à l’aise pour utiliser ces notions dans un
-contexte concret, comme l’analyse de données ou la structuration d’un raisonnement.<br><br>
-Cependant, je reste encore en progression sur des aspects plus théoriques, notamment en
-théorie des nombres ou sur certaines notions avancées que je n’utilise pas directement dans
-mon environnement professionnel.
+Je pense aujourd’hui avoir un bon niveau dans les domaines liés à la logique
+mathématique et au raisonnement algorithmique, notamment lorsqu’il s’agit de
+résoudre des problèmes techniques complexes ou d’analyser des comportements
+anormaux.<br><br>
+
+Je suis particulièrement à l’aise dans les sujets mêlant cybersécurité, logique et
+programmation, comme la cryptographie, l’analyse de workflows complexes ou encore
+l’automatisation de contrôles reposant sur des règles conditionnelles avancées.<br><br>
+
+Les nombreux CTF réalisés au fil des années m’ont également permis de développer
+une vraie capacité à raisonner méthodiquement face à des problèmes parfois très
+complexes. Cela m’a appris à décomposer un problème, tester des hypothèses et
+comprendre progressivement le fonctionnement interne d’un système avant de chercher
+à l’exploiter ou à le corriger.<br><br>
+
+Cependant, je reste encore en progression sur certains aspects mathématiques plus
+théoriques et académiques. Même si je comprends bien les concepts utilisés dans un
+cadre concret, je manque parfois de profondeur sur certaines démonstrations ou sur
+des notions très avancées de mathématiques pures.<br><br>
+
+J’ai également tendance à parfois chercher des solutions très poussées ou très
+optimisées à des problèmes qui pourraient être résolus plus simplement. Avec
+l’expérience, j’apprends progressivement à trouver un meilleur équilibre entre rigueur et efficacité.
 </p>
 
 <br><br>
@@ -79,21 +154,36 @@ mon environnement professionnel.
 <h2 style="margin-top:50px;">Mon évolution dans cette compétence</h2>
 
 <p>
-Je souhaite continuer à consolider ces bases, en particulier sur les aspects utiles en
-cybersécurité, comme l’analyse de données ou certains principes liés à la cryptographie.<br><br>
-L’objectif est de mieux maîtriser ces notions afin de les appliquer de manière plus concrète
-dans des projets techniques, tout en gardant une approche pratique orientée vers les
-besoins du terrain.
-</p>
+Je souhaite continuer à approfondir mes connaissances dans les domaines liés à la
+cryptographie, à la théorie des nombres et à l’analyse algorithmique.<br><br>
 
+À moyen terme, j’aimerais développer des compétences plus avancées en sécurité
+offensive, notamment sur les sujets mêlant reverse engineering, cryptographie et
+analyse de protocoles. Ce sont des domaines que j’apprécie particulièrement car ils
+nécessitent à la fois des compétences techniques, mathématiques et une forte logique
+de raisonnement.<br><br>
+
+Je souhaite également continuer à participer à des CTF afin de continuer à progresser
+sur ce type de problématiques complexes. Les challenges de cryptographie, de reverse
+engineering ou encore les catégories atypiques sont souvent ceux qui me permettent
+de le plus développer ma logique et ma capacité d’analyse.<br><br>
+
+Enfin, j’aimerais être capable à terme de développer des outils plus avancés liés à la
+cybersécurité offensive ou à l’analyse automatisée, en combinant programmation,
+mathématiques et logique algorithmique.
+</p>
 
 <br><br><br>
-<p style="font-size: 25px;">Compétence présente dans les réalisations suivantes :</p>
-- <a href="../projects/workflows-okta.html" style="text-decoration: underline;">Développement et gestion de Workflows Okta</a><br>
-- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a><br>
-- <a href="../projects/documentation.html" style="text-decoration: underline;">Automatisation de la documentation et mise en place d’un système de contrôle des workflows Okta</a>
 
+<p style="font-size: 25px;">
+Compétence présente dans les réalisations suivantes :
 </p>
+
+- <a href="../projects/workflows-okta.html" style="text-decoration: underline;">Développement et gestion de Workflows Okta</a><br>
+
+- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a><br>
+
+- <a href="../projects/documentation.html" style="text-decoration: underline;">Automatisation de la documentation et mise en place d’un système de contrôle des workflows Okta</a>
 
 </section>
 
