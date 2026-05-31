@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gestion Configuration - Portfolio Soulier Jim</title>
+<title>Gestion de la configuration - Portfolio Soulier Jim</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -30,51 +30,119 @@
 <h2 style="margin-top:50px;">Ma définition</h2>
 
 <p>
-La gestion de la configuration consiste à définir, organiser et maintenir les paramètres d’un
-système afin d’assurer son bon fonctionnement dans le temps. Cela implique de structurer
-les éléments techniques, de garantir leur cohérence et de pouvoir les faire évoluer sans
-perturber l’environnement existant.<br><br>
-Dans un contexte professionnel, une bonne gestion de la configuration permet de limiter les
-erreurs, de faciliter la maintenance et d’assurer une meilleure traçabilité des modifications.
+La gestion de la configuration consiste à organiser, structurer et maintenir les différents
+paramètres d’un système informatique afin d’assurer son bon fonctionnement dans le temps.
+Cela implique de définir des règles cohérentes, de standardiser certaines pratiques et de
+garantir que les modifications apportées à un environnement restent maîtrisées et
+traçables.<br><br>
+
+Dans un contexte professionnel, cette compétence est particulièrement importante car une
+mauvaise configuration peut rapidement entraîner des dysfonctionnements, des problèmes
+de sécurité ou des difficultés de maintenance. Une configuration claire et homogène permet
+au contraire de rendre un environnement plus fiable, plus simple à comprendre et plus facile
+à faire évoluer.<br><br>
+
+En cybersécurité et en IAM, la gestion de la configuration intervient à plusieurs niveaux :
+gestion des groupes utilisateurs, paramétrage des accès, structuration des workflows,
+centralisation des données de configuration, organisation des environnements ou encore
+gestion d’infrastructures techniques utilisées par plusieurs utilisateurs.
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Mes éléments de preuve</h2>
 
 <p>
-Au cours de mon alternance chez Emeria, j’ai été régulièrement amené à intervenir sur des
-éléments de configuration, notamment dans Okta, que ce soit pour les workflows ou les
-Access Requests.<br><br>
-Dans le cadre des Access Requests, j’ai configuré différents formulaires, défini les champs
-nécessaires, associé les bonnes ressources et mis en place des paramètres adaptés aux
-besoins des équipes. Cela demandait de bien comprendre l’environnement existant afin
-d’intégrer les nouvelles demandes sans perturber les processus déjà en place.<br><br>
-J’ai également travaillé sur les Config Lists, qui permettent de centraliser certaines
-informations utilisées dans les workflows. Leur utilisation m’a permis de rendre les
-configurations plus flexibles et plus faciles à maintenir, en évitant de dupliquer des
-informations à plusieurs endroits.<br><br>
-Dans les workflows Okta, j’ai été amené à modifier ou compléter des configurations
-existantes en ajoutant des conditions, en ajustant certains paramètres ou en intégrant de
-nouvelles logiques. Cela nécessitait de bien comprendre l’impact de chaque modification
-afin d’éviter les effets de bord.<br><br>
-Enfin, dans le cadre du développement du système d’analyse de logsources, j’ai mis en
-place un fichier de configuration externe permettant de définir des paramètres comme les
-seuils d’inactivité ou les comportements attendus. Cela rend la solution plus modulable et
-plus simple à adapter sans modifier directement le code.
+Au cours de mon alternance chez Emeria, j’ai été régulièrement amené à travailler sur des
+problématiques de configuration dans l’environnement Okta et plus largement dans les
+processus liés à la gestion des identités et des accès.<br><br>
+
+J’ai notamment participé à l’harmonisation de plusieurs groupes Okta utilisés par l’équipe
+IAM. Cela impliquait de renommer certains groupes afin de respecter des conventions plus
+cohérentes, de restructurer certaines logiques d’attribution et de mettre en place des règles
+permettant de lier automatiquement plusieurs groupes entre eux. Ce travail était important
+car l’environnement contenait déjà de nombreux groupes utilisés dans différents processus
+métiers et de sécurité. Une mauvaise organisation pouvait rapidement rendre l’ensemble
+difficile à maintenir ou à comprendre.<br><br>
+
+J’ai également travaillé sur la centralisation de certaines informations de configuration grâce
+à l’utilisation de Config Lists dans Okta. L’objectif était d’éviter de dupliquer certaines
+données à plusieurs endroits et de rendre les configurations plus flexibles. Cette approche
+facilitait énormément les futures évolutions car une modification pouvait être réalisée à un
+seul endroit sans devoir modifier plusieurs workflows ou processus différents.<br><br>
+
+
+En dehors de l’entreprise, j’ai également participé à un projet particulièrement formateur
+autour de la mise en place d’une plateforme CTF destinée à des étudiants de Bachelor 1 à
+EPITA. Avec plusieurs autres étudiants de Bachelor 3, nous avions pour objectif de
+construire une infrastructure complète permettant d’organiser une compétition de
+cybersécurité stable, maintenable et adaptée à des étudiants découvrant parfois le
+domaine.<br><br>
+
+Dans ce projet, j’ai participé à l’installation et à la configuration complète de la plateforme
+CTFd sur un serveur Linux. Cela incluait la configuration générale de l’environnement, la
+gestion des utilisateurs, des permissions, des catégories de challenges, du scoring ainsi que
+l’organisation globale des services utilisés pendant le CTF.<br><br>
+
+Une grande partie du travail consistait à structurer correctement l’architecture afin que les
+challenges puissent fonctionner sans perturber les autres services. Certains challenges
+nécessitaient par exemple des configurations réseau spécifiques, des ports dédiés ou des
+services isolés. Il fallait donc gérer correctement les dépendances, les accès et les
+permissions afin de garantir la stabilité globale de la plateforme pendant toute la durée de
+l’événement.<br><br>
+
+Nous avons également ajouté plusieurs fonctionnalités supplémentaires à CTFd. Certaines
+provenaient de plugins open source récupérés sur GitHub que nous avons dû adapter à
+notre environnement. Par exemple, nous avons intégré un système permettant de conserver
+l’historique des flags saisis par les utilisateurs sur certains challenges. Cette fonctionnalité
+facilitait le suivi des tentatives et permettait d’analyser plus facilement certains
+comportements observés pendant la compétition.<br><br>
+
+Avec un collègue de classe, nous avons aussi développé notre propre système de
+“chaud/froid” pour les challenges d’OSINT. L’idée était d’aider légèrement les étudiants
+lorsqu’ils étaient proches de la bonne réponse sans pour autant révéler directement le flag.
+Lorsqu’un participant soumettait une réponse incorrecte, le système comparait
+automatiquement le texte proposé avec le flag attendu. Plus la réponse se rapprochait du flag réel, plus le
+système indiquait au joueur qu’il était “chaud”. À l’inverse, une réponse très éloignée
+renvoyait un retour “froid”.<br><br>
+
+Ce projet m’a beaucoup appris sur l’importance de la gestion de la configuration dans un
+environnement réel. Une simple erreur de paramétrage pouvait empêcher un challenge de
+fonctionner correctement, perturber le scoring ou rendre un service inaccessible aux
+étudiants. Cela demandait donc beaucoup de rigueur, d’organisation et de vérifications
+avant chaque mise en production.
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Mon autocritique</h2>
 
 <p>
-Je pense aujourd’hui avoir un bon niveau en gestion de la configuration. Je suis capable de
-structurer des paramètres de manière logique et de les adapter en fonction des besoins, tout
-en prenant en compte les contraintes de l’environnement.<br><br>
-Cependant, je pourrais encore améliorer ma rigueur sur la documentation de certaines
-configurations, afin de faciliter davantage leur compréhension et leur reprise par d’autres
-personnes.
+Je pense aujourd’hui avoir développé un bon niveau en gestion de la configuration grâce aux
+différents environnements sur lesquels j’ai travaillé, aussi bien en entreprise que dans mes
+projets personnels. Je suis capable de structurer des configurations de manière cohérente,
+de maintenir des environnements relativement complexes et d’anticiper certains impacts liés
+aux modifications techniques.<br><br>
+
+Avec l’expérience, j’ai également compris qu’une bonne configuration ne doit pas uniquement
+fonctionner techniquement. Elle doit aussi rester lisible, logique et maintenable dans le
+temps, notamment lorsqu’elle est utilisée par plusieurs personnes ou par une équipe entière.
+Cette dimension organisationnelle est quelque chose que je prends beaucoup plus en
+compte aujourd’hui qu’au début de mon alternance.<br><br>
+
+Je pense aussi avoir gagné en rigueur dans ma manière de travailler. Les projets sur
+lesquels je suis intervenu m’ont montré qu’une petite erreur de configuration pouvait parfois
+avoir des conséquences importantes, notamment dans des environnements utilisés
+quotidiennement par plusieurs utilisateurs. Cela m’a appris à davantage tester mes
+modifications, à vérifier les dépendances et à prendre du recul avant certaines mises en
+production.<br><br>
+
+Cependant, je reste conscient qu’il me reste encore plusieurs aspects à approfondir. Je
+pourrais notamment progresser sur les environnements cloud plus avancés, sur les outils
+d’Infrastructure as Code ou encore sur les méthodes permettant d’industrialiser davantage
+la gestion des configurations à grande échelle.
 </p>
 
 <br><br>
@@ -83,23 +151,34 @@ personnes.
 <h2 style="margin-top:50px;">Mon évolution dans cette compétence</h2>
 
 <p>
-Je souhaite continuer à progresser en gestion de la configuration, notamment en travaillant
-sur des environnements plus complexes et en approfondissant les bonnes pratiques liées à
-la gestion des systèmes.<br><br>
-À terme, j’aimerais également développer mes compétences sur des outils d’infrastructure
-as code, afin d’automatiser davantage la gestion des configurations et de la rendre encore
-plus fiable et reproductible.
-</p>
+Je souhaite continuer à approfondir cette compétence en travaillant sur des environnements
+toujours plus complexes et plus industrialisés. À terme, j’aimerais être capable de gérer des
+architectures complètes de manière beaucoup plus automatisée, notamment grâce à des
+outils comme Terraform, Ansible ou des pipelines d’intégration continue.<br><br>
 
+Je souhaite également continuer à améliorer ma capacité à concevoir des environnements
+clairs, maintenables et facilement exploitables par d’autres personnes. Avec l’expérience, je
+me rends compte que la qualité d’une configuration ne dépend pas uniquement de son
+fonctionnement technique, mais aussi de sa lisibilité et de sa capacité à évoluer
+correctement dans le temps.<br><br>
+
+Enfin, j’aimerais continuer à participer à des projets techniques mêlant cybersécurité,
+infrastructure et automatisation, notamment à travers des projets personnels ou des
+événements comme les CTF. Ce sont souvent ces projets qui permettent de progresser
+rapidement sur les problématiques de configuration réelles et sur la gestion
+d’environnements complexes.
+</p>
 
 <br><br><br>
+
 <p style="font-size: 25px;">Compétence présente dans les réalisations suivantes :</p>
+
 - <a href="../projects/access-requests.html" style="text-decoration: underline;">Gestion, création et développement d’Access Requests</a><br>
-- <a href="../projects/alertes.html" style="text-decoration: underline;">Traitement et analyse d’alertes de sécurité (SOC)</a><br>
+
 - <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a><br>
+
 - <a href="../projects/documentation.html" style="text-decoration: underline;">Automatisation de la documentation et mise en place d’un système de contrôle des workflows Okta</a>
 
-</p>
 </section>
 
 <footer>
