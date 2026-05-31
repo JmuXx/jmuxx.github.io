@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Securité Applications - Portfolio Soulier Jim</title>
+<title>Sécurité des Applications - Portfolio Soulier Jim</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -34,10 +34,22 @@ La sécurité des applications consiste à mettre en place des mesures permettan
 les systèmes et les données contre les accès non autorisés, les erreurs de configuration ou
 les comportements malveillants. Cela passe par le contrôle des accès, la mise en place de
 règles de sécurité, ainsi que la surveillance des activités.<br><br>
+
 Dans un environnement professionnel, cette compétence est essentielle pour garantir que
 les utilisateurs disposent uniquement des droits nécessaires, tout en limitant les risques liés
-aux erreurs humaines ou aux attaques.
+aux erreurs humaines ou aux attaques.<br><br>
+
+La sécurité applicative ne se limite cependant pas uniquement à la protection d’une
+application contre des attaques externes. Elle implique également de comprendre le
+fonctionnement des mécanismes d’authentification, la gestion des sessions, le contrôle des
+permissions, la journalisation des événements sensibles ou encore la sécurisation des flux
+de données entre différents systèmes.<br><br>
+
+Cette compétence demande donc à la fois une approche technique et une capacité
+d’analyse importante afin d’identifier les comportements anormaux, comprendre les risques
+et mettre en place des protections adaptées au contexte de l’entreprise.
 </p>
+
 <br><br>
 <hr>
 
@@ -47,22 +59,74 @@ aux erreurs humaines ou aux attaques.
 Au cours de mon alternance chez Emeria, j’ai été amené à travailler régulièrement sur des
 sujets liés à la sécurité des applications, notamment à travers l’utilisation d’Okta pour la
 gestion des identités et des accès.<br><br>
+
 Dans le cadre des workflows Okta, j’ai participé à la mise en place de contrôles sur certains
 groupes sensibles, afin de mieux encadrer l’attribution des droits. Cela permet de s’assurer
 que les accès sont accordés selon des règles définies, tout en conservant une traçabilité
-des actions réalisées.<br><br>
+des actions réalisées. Certains workflows surveillaient également des événements précis,
+comme l’ajout ou la suppression d’utilisateurs dans certains groupes critiques, afin de
+détecter rapidement des comportements inhabituels.<br><br>
+
 J’ai également travaillé sur les Access Requests, qui permettent de structurer les demandes
 d’accès des utilisateurs. Cela m’a permis de renforcer les mécanismes de validation et de
-mieux encadrer l’attribution des droits, en particulier pour les accès les plus critiques.<br><br>
+mieux encadrer l’attribution des droits, en particulier pour les accès les plus critiques. Dans
+certains cas, des contrôles automatiques étaient mis en place afin de vérifier les groupes de
+l’utilisateur ou de bloquer automatiquement certaines demandes non conformes.<br><br>
+
 En parallèle, le traitement des alertes de sécurité m’a permis d’intervenir directement sur
 des situations concrètes, comme des tentatives de phishing, des connexions suspectes ou
-des comportements anormaux sur des comptes utilisateurs. Dans ces cas-là, j’ai été amené
-à mettre en place des actions de sécurisation, comme la réinitialisation de mots de passe, le
-blocage d’emails malveillants ou la restriction d’accès à certains contenus.<br><br>
-Enfin, le projet de développement du système d’analyse de logsources contribue également
-à cette compétence, puisqu’il permet d’améliorer la fiabilité de la collecte des logs, élément
-essentiel pour la détection d’incidents de sécurité.
+des comportements anormaux sur des comptes utilisateurs. Dans ces situations, j’ai été
+amené à analyser les événements remontés par les outils de sécurité, comprendre leur
+origine et mettre en place différentes actions de sécurisation comme la réinitialisation de
+mots de passe, le blocage d’emails malveillants ou encore la restriction temporaire d’accès à
+certains contenus.<br><br>
+
+
+En dehors du contexte professionnel, j’ai également travaillé sur plusieurs projets personnels
+liés à la sécurité applicative. Durant mon Bachelor, j’ai notamment développé avec deux
+amis un système d’analyse de binaires ELF permettant d’attribuer automatiquement un score
+de dangerosité à un fichier sous Linux.<br><br>
+
+Le projet était développé principalement en Python et fonctionnait en ligne de commande,
+avec une génération graphique des résultats pour rendre l’analyse plus lisible. Le programme
+analysait différentes caractéristiques du binaire compilé afin de détecter des comportements
+potentiellement suspects. Par exemple, si le système détectait la présence de chaînes
+comme “/bin/sh” associées à certains symboles sensibles comme “system()”, le score de
+dangerosité augmentait automatiquement.<br><br>
+
+Le score reposait sur plusieurs analyses combinées : récupération des symboles du binaire,
+analyse des chaînes présentes dans les données, vérification de certaines fonctions
+importées, comparaison avec des signatures simples et calcul d’un score global sur 5.
+L’objectif n’était pas de remplacer un antivirus, mais plutôt de comprendre la logique utilisée
+par certains outils de détection comportementale et d’apprendre à manipuler des binaires Linux de manière concrète.<br><br>
+
+Ce projet nous a demandé de comprendre la structure interne des exécutables ELF, le rôle
+des sections, le fonctionnement des symboles dynamiques ainsi que certaines techniques
+utilisées par des programmes malveillants pour exécuter des commandes système. Pour un
+projet de niveau Bachelor 2, cela représentait un travail relativement conséquent, aussi bien
+sur la partie développement que sur la partie analyse sécurité.<br><br>
+
+En parallèle, je participle régulièrement à des CTF (Capture The Flag) depuis plusieurs
+années, principalement dans les catégories web, cryptographie ou reverse engineering.
+Cela me permet de continuer à développer mes compétences en sécurité applicative sur des
+cas techniques très variés.<br><br>
+
+Par exemple, sur le 404CTF récemment, lors d’un challenge web de niveau intermédiaire,
+l’objectif était d’accéder à un espace administrateur sans posséder de compte valide. Après
+analyse de l’application, j’ai remarqué qu’un token JWT était utilisé pour gérer
+l’authentification des utilisateurs. En observant son contenu, j’ai identifié que l’algorithme de
+signature utilisé côté serveur était mal vérifié.<br><br>
+
+J’ai alors testé plusieurs hypothèses avant de découvrir que le serveur acceptait certains
+tokens modifiés sans correctement vérifier leur signature. En reconstruisant manuellement un
+JWT contenant un rôle administrateur et en modifiant certaines parties du token, j’ai réussi à
+obtenir un accès administrateur à l’application et résoudre le challenge.<br><br>
+
+Ce type d’exercice m’aide à développer ma capacité à comprendre des mécanismes de
+sécurité applicative réels, à analyser des comportements inattendus et à identifier les erreurs
+de conception pouvant entraîner des vulnérabilités.
 </p>
+
 <br><br>
 <hr>
 
@@ -70,12 +134,23 @@ essentiel pour la détection d’incidents de sécurité.
 
 <p>
 Je pense aujourd’hui avoir un bon niveau en sécurité des applications, notamment sur les
-aspects liés à la gestion des accès et à la surveillance des activités. Je suis capable de
-comprendre les enjeux de sécurité et de mettre en place des contrôles adaptés dans un
-environnement professionnel.<br><br>
-Cependant, je reste encore en progression sur des aspects plus avancés, notamment en
-sécurité applicative pure (comme les vulnérabilités web ou les tests d’intrusion), que je n’ai
-pas encore eu l’occasion d’explorer en profondeur dans un cadre professionnel.
+aspects liés à la gestion des accès, à l’analyse des comportements et à la compréhension
+des mécanismes de sécurité applicative.<br><br>
+
+Mon alternance m’a permis d’acquérir une expérience concrète sur des environnements
+professionnels sensibles, où une erreur peut avoir un impact important sur la sécurité du
+système d’information. J’ai également développé une certaine autonomie dans l’analyse des
+problèmes de sécurité et dans la mise en place de solutions adaptées.<br><br>
+
+En parallèle, les projets personnels et les CTF m’ont permis d’approfondir des aspects plus
+offensifs de la cybersécurité, notamment autour des vulnérabilités web, de l’analyse de
+binaires ou encore de certains mécanismes d’authentification.<br><br>
+
+Cependant, je reste encore en progression sur plusieurs sujets plus avancés, notamment les
+tests d’intrusion en environnement réel, la sécurité cloud avancée ou certaines techniques
+de sécurisation applicative à grande échelle. J’ai également conscience qu’en cybersécurité,
+les technologies et les méthodes évoluent très rapidement, ce qui demande une veille
+constante et une remise en question régulière de ses connaissances.
 </p>
 
 <br><br>
@@ -84,21 +159,30 @@ pas encore eu l’occasion d’explorer en profondeur dans un cadre professionne
 <h2 style="margin-top:50px;">Mon évolution dans cette compétence</h2>
 
 <p>
-Je souhaite approfondir mes connaissances en sécurité des applications, notamment en me
-formant davantage sur les vulnérabilités courantes et les bonnes pratiques de sécurisation.<br><br>
-À moyen terme, j’aimerais être capable d’intervenir à la fois sur la gestion des accès et sur
-des aspects plus techniques de la sécurité applicative, afin d’avoir une vision plus complète
-de la protection des systèmes.
+Je souhaite continuer à approfondir mes connaissances en sécurité des applications, aussi
+bien sur les aspects défensifs que sur les aspects offensifs de la cybersécurité.<br><br>
+
+À moyen terme, j’aimerais développer davantage mes compétences sur les vulnérabilités
+web avancées, les architectures cloud sécurisées ainsi que les mécanismes de protection
+des applications modernes. Je souhaite également continuer à pratiquer les CTF afin de me
+confronter régulièrement à des problématiques techniques complexes et variées.<br><br>
+
+J’aimerais aussi approfondir mes compétences autour de l’analyse de binaires, du reverse
+engineering et de la compréhension des mécanismes internes des applications, car ce sont
+des domaines que je trouve particulièrement intéressants et formateurs.<br><br>
+
+Enfin, je pense également passer certaines certifications en cybersécurité après mes études
+afin de renforcer mes compétences techniques et de continuer à progresser dans ce
+domaine sur le long terme.
 </p>
 
-
 <br><br><br>
+
 <p style="font-size: 25px;">Compétence présente dans les réalisations suivantes :</p>
 
 - <a href="../projects/access-requests.html" style="text-decoration: underline;">Gestion, création et développement d’Access Requests</a><br>
-- <a href="../projects/alertes.html" style="text-decoration: underline;">Traitement et analyse d’alertes de sécurité (SOC)</a><br>
-- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a><br>
-</p>
+- <a href="../projects/soc-alerts.html" style="text-decoration: underline;">Traitement et analyse d’alertes de sécurité (SOC)</a><br>
+- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a>
 
 </section>
 
