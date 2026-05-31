@@ -28,17 +28,26 @@
 <hr>
 
 <h2 style="margin-top:50px;">Ma définition</h2>
-Scripter et automatiser signifie concevoir des solutions permettant de simplifier, accélérer et
-fiabiliser des tâches répétitives ou complexes, notamment dans le domaine de la gestion
-des systèmes, de la sécurité ou du déploiement applicatif. Cela repose souvent sur la
-maîtrise de langages comme Python, Bash, PowerShell ou des outils comme Ansible,
-Terraform, etc.<br><br>
-Dans un contexte professionnel, l’automatisation contribue à réduire les erreurs humaines,
-améliorer la productivité et garantir la traçabilité des opérations. En cybersécurité, cela
-permet aussi d’améliorer la réactivité face aux incidents.
-<p>
 
+<p>
+Scripter et automatiser signifie concevoir des solutions permettant de simplifier, accélérer
+et fiabiliser des tâches répétitives ou complexes, notamment dans le domaine de la gestion
+des systèmes, de la sécurité ou du déploiement applicatif. Cela repose souvent sur la
+maîtrise de langages comme Python, Bash, PowerShell ou sur l’utilisation d’outils
+d’automatisation.<br><br>
+
+Dans un contexte professionnel, l’automatisation permet de réduire les erreurs humaines,
+d’améliorer la productivité et de garantir une meilleure traçabilité des opérations. En
+cybersécurité et en IAM, elle joue également un rôle important dans la sécurisation des
+processus, le contrôle des accès et la supervision des environnements.<br><br>
+
+Selon moi, cette compétence ne consiste pas uniquement à écrire du code, mais surtout à
+être capable d’analyser un besoin, identifier ce qui peut être automatisé de manière
+pertinente, puis développer une solution fiable, optimisée, maintenable et adaptée à l’environnement
+de production. L’objectif n’est pas simplement de “faire fonctionner” un script, mais de
+concevoir quelque chose qui soit réellement exploitable dans le temps par une équipe.
 </p>
+
 <br><br>
 <hr>
 
@@ -46,38 +55,153 @@ permet aussi d’améliorer la réactivité face aux incidents.
 
 <p>
 Chez Emeria, une grande partie de mon travail a consisté à automatiser des tâches
-récurrentes ou critiques dans le domaine de la sécurité et de la gestion des accès. Un projet
-particulièrement formateur a été le développement d’un système d’analyse automatique de
-log sources internes.<br><br>
-Ce système, que j’ai développé avec Python, avait pour but de détecter automatiquement
-les anomalies de collecte dans notre infrastructure de sécurité (notamment les
-déconnexions intempestives ou les délais de réception). En analysant les timestamps, les
-flux de données et les plus généralement les fichiers journaux, le script pouvait identifier une
-source de logs inactive depuis un seuil défini, puis envoyer automatiquement une alerte à
-l’équipe.<br><br>
-J’ai utilisé la librairie schedule pour planifier les tâches, smtplib pour envoyer des mails
-et pandas pour traiter les fichiers volumineux. Ce script a permis de détecter plusieurs
-incidents avant qu’ils ne soient visibles dans notre SIEM, réduisant les délais d’intervention.<br><br>
-Dans un autre contexte, j’ai écrit plusieurs Workflow Okta pour configurer automatiquement
-des environnements de test de sécurité, ou encore simplement sécuriser ou automatiser des
-tâches plus complexes.<br><br>
-Enfin, pour l’intégration de workflows automatisés dans Okta, j’ai dû écrire des scripts
-PowerShell afin de valider des scénarios de désactivation automatique des comptes inactifs
-ou mal configurés. Cela a nécessité de nombreuses itérations et tests avec l’API Okta.
+récurrentes ou critiques liées à la sécurité, à la gestion des identités et au suivi des
+workflows IAM.<br><br>
+
+L’un des projets les plus importants sur lesquels j’ai travaillé est le développement d’un
+système automatisé d’analyse de log sources internes. Ce projet avait pour objectif de
+détecter automatiquement les interruptions de collecte ou les comportements anormaux sur
+certaines sources de logs utilisées dans l’environnement de sécurité.<br><br>
+
+J’ai développé cette solution en Python en utilisant notamment pandas, datetime, smtplib et
+différents modules liés au traitement de données et à l’envoi automatique d’alertes. Le
+script analysait les timestamps des logs afin de détecter les sources devenues inactives
+au-delà d’un seuil défini. Lorsqu’une anomalie était détectée, une alerte était
+automatiquement envoyée à l’équipe sécurité.<br><br>
+
+Ce projet m’a demandé de travailler sur des volumes de données relativement importants
+provenant d’une base PostgreSQL contenant un grand nombre de logs. J’ai dû adapter le
+traitement afin qu’il reste suffisamment performant et exploitable dans un contexte réel. Le
+script gérait également plusieurs cas d’erreurs et générait des logs techniques afin de
+faciliter le suivi et le débogage. Aujourd’hui encore, ce système continue d’être utilisé dans
+l’environnement de l’entreprise.<br><br>
+
+J’ai également développé de nombreux scripts et workflows autour de l’écosystème Okta et
+de la gestion IAM. Une partie importante de mon travail consistait à automatiser des tâches
+liées aux workflows Okta, aux Access Requests ou encore à la gestion des utilisateurs et
+des groupes.<br><br>
+
+Au total, j’ai travaillé sur plusieurs dizaines de scripts et sur environ une centaine de
+workflows différents. Certains étaient relativement simples, tandis que d’autres étaient
+beaucoup plus complexes et critiques pour les processus IAM de l’entreprise.<br><br>
+
+Par exemple, j’ai développé :
+<br><br>
+
+• des workflows planifiés exécutés automatiquement chaque jour afin de contrôler certains
+événements ou remonter des alertes ;<br>
+
+• des workflows permettant de générer automatiquement des rapports utilisateurs selon
+différents critères ;<br>
+
+• des workflows de contrôle détectant l’ajout ou la suppression d’utilisateurs dans certains
+groupes sensibles ;<br>
+
+• des scripts d’automatisation utilisant les API Okta et Okta Access Requests ;<br>
+
+• des automatisations ponctuelles permettant de traiter en masse certains besoins
+spécifiques liés aux utilisateurs ou aux filiales du groupe.<br><br>
+
+Certaines automatisations étaient directement exécutées dans Okta Workflows, tandis que
+d’autres reposaient sur des scripts Python ou PowerShell exécutés séparément. Une partie
+des scripts développés est encore utilisée aujourd’hui dans l’environnement de l’entreprise,
+soit de manière planifiée, soit ponctuellement selon les besoins de l’équipe IAM.<br><br>
+
+Au fil du temps, j’ai également été amené à intervenir sur des workflows complexes
+nécessitant un important travail de compréhension et de débogage.<br><br>
+
+Je me souviens notamment d’un workflow de traitement de données utilisant une logique
+récursive dans laquelle le workflow s’appelait lui-même avec différents paramètres afin de
+traiter plusieurs ensembles de données successivement. Comprendre son fonctionnement et
+corriger certains comportements demandait une analyse approfondie de la logique globale
+ainsi qu’une bonne compréhension des flux de données.<br><br>
+
+J’ai également rencontré des problèmes liés au parallélisme et au multi-threading lors de la
+génération automatisée de fichiers Excel. Certaines lignes étaient écrites dans le mauvais
+ordre à cause d’exécutions simultanées. Pour résoudre ce problème, j’ai mis en place un
+système utilisant un identifiant d’exécution (execution_id) permettant d’associer correctement
+chaque ligne à l’exécution concernée.<br><br>
+
+Cette expérience m’a permis de mieux comprendre certains comportements complexes liés
+à l’exécution concurrente et à la synchronisation des données dans les systèmes
+automatisés.<br><br>
+
+Tous les développements étaient réalisés dans un environnement de qualification avant mise
+en production. Cette étape était indispensable, car certains workflows pouvaient avoir un
+impact direct sur des processus critiques liés aux accès utilisateurs ou à la sécurité de
+l’environnement Okta.<br><br>
+
+Enfin, cette compétence m’a également amené à accompagner d’autres personnes sur ces
+sujets. Cette année, l’équipe cybersécurité d’Emeria a accueilli un stagiaire, et j’ai été
+amené à lui présenter le fonctionnement global des workflows Okta, leur logique de
+fonctionnement ainsi qu’une introduction au développement no-code utilisé dans
+l’environnement IAM.<br><br>
+
+En parallèle de mes projets réalisés en entreprise, j’ai également développé plusieurs
+projets personnels liés au scripting et à l’automatisation. L’un des projets les plus
+intéressants que j’ai réalisés concernait le jeu Rocket League et plus précisément le
+“speedflip”.<br><br>
+
+Le speedflip est une mécanique avancée du jeu permettant d’atteindre une vitesse maximale
+très rapidement, notamment lors des kickoffs. Ce mouvement est particulièrement complexe
+car il doit être réalisé avec un timing extrêmement précis sur plusieurs inputs successifs de
+la manette. Sur PC, certains plugins permettent d’analyser les mouvements du joueur afin
+de l’aider à apprendre cette mécanique. En revanche, ce type d’outil n’existe pas sur
+console.<br><br>
+
+J’ai donc décidé de développer un outil personnel afin d’aider un ami jouant sur console à
+apprendre le speedflip. Le principe était relativement simple : la manette était branchée sur
+un ordinateur exécutant mon script Python pendant que Rocket League tournait sur la
+console. Le joueur lançait ensuite une map d’entraînement spécialisée appelée “Speedflip
+Kickoff Test”, créée par le joueur Musty, puis réalisait plusieurs tentatives de speedflip.<br><br>
+
+Le script analysait en temps réel les inputs de la manette grâce à une bibliothèque Python
+capable de récupérer les mouvements des joysticks et les pressions de boutons. À partir de
+ces données, j’ai développé une logique permettant de reproduire en interne certains calculs
+liés à la physique et au fonctionnement du mouvement dans Rocket League afin de vérifier
+si le speedflip réalisé était correct ou non.<br><br>
+
+Une interface graphique affichait ensuite différentes informations permettant au joueur de
+comprendre ce qui n’allait pas dans son mouvement : timing incorrect, angle du joystick,
+flip mal annulé, inputs trop lents ou encore mauvaise orientation. L’objectif n’était pas
+simplement d’indiquer un échec, mais d’aider à comprendre précisément quelle partie du
+mouvement devait être corrigée.<br><br>
+
+Ce projet m’a permis de travailler sur plusieurs problématiques techniques différentes :
+l’analyse d’inputs en temps réel, la logique de traitement de données, le calcul
+d’événements dépendants du timing ainsi que le développement d’une interface utilisateur
+simple mais exploitable. Même s’il s’agissait d’un projet personnel, cela m’a beaucoup aidé
+à progresser sur la conception de scripts complexes et sur la manière de structurer une
+logique d’analyse automatisée.
 </p>
+
 <br><br>
 <hr>
 
 <h2 style="margin-top:50px;">Mon autocritique</h2>
 
 <p>
-Au vu des projets réalisés en entreprise, notamment le développement de scripts
-d’automatisation et de traitement de données à grande échelle, je considère avoir atteint un
-niveau avancé, proche du niveau expert en scripting, en particulier sur Python, Bash, Java
-mais aussi beaucoup d’autres langages informatiques.<br><br>
-Néanmoins, je suis encore parfois trop centré sur les langages de confort, et je pourrais
-gagner en polyvalence sur des outils plus spécialisés comme Terraform ou des scripts
-d’intégration continue via GitLab CI/CD.
+Grâce aux différents projets réalisés chez Emeria, je considère avoir fortement progressé en
+scripting et en automatisation. Aujourd’hui, je suis capable de développer de manière
+relativement autonome des scripts ou des workflows répondant à des besoins concrets,
+aussi bien en Python qu’au travers d’outils no-code comme Okta Workflows.<br><br>
+
+Je pense également avoir gagné en maturité dans ma manière de développer. Avec le
+temps, je ne cherche plus uniquement à produire un script fonctionnel, mais à concevoir des
+automatisations maintenables, compréhensibles et suffisamment robustes pour être utilisées
+durablement dans un environnement professionnel.<br><br>
+
+Le fait d’avoir travaillé sur des workflows critiques m’a aussi appris à être plus rigoureux
+dans les phases de test et de validation. J’ai pris conscience qu’une erreur dans un système
+automatisé peut avoir des conséquences importantes, notamment lorsqu’il s’agit de gestion
+des accès ou de traitements réalisés en masse.<br><br>
+
+Je considère aujourd’hui avoir un bon niveau dans cette compétence, particulièrement sur
+Python et sur les logiques d’automatisation liées à l’IAM et aux workflows Okta.<br><br>
+
+Cependant, je pense encore devoir progresser sur certains aspects plus avancés notamment autour des pipelines CI/CD, du
+versionning avancé ou encore des infrastructures as code comme Terraform. Je reste également conscient que certaines problématiques complexes liées aux performances ou au
+parallélisme demandent encore de l’expérience pour être parfaitement maîtrisées.
 </p>
 
 <br><br>
@@ -86,23 +210,33 @@ d’intégration continue via GitLab CI/CD.
 <h2 style="margin-top:50px;">Mon évolution dans cette compétence</h2>
 
 <p>
-Mon ambition à moyen terme est d’intégrer davantage l’automatisation dans des pipelines
-DevSecOps. Pour cela, je veux approfondir mon usage de GitLab CI/CD, renforcer mes
-compétences en Infrastructure as Code, et expérimenter l’automatisation de réponses à
-incidents via des outils comme TheHive ou Cortex.<br><br>
-Je souhaite également contribuer à des projets open source où les scripts d’automatisation
-sont essentiels, afin de confronter mes pratiques à celles d’autres développeurs.
+Cette expérience m’a donné envie de continuer à approfondir tout ce qui touche à
+l’automatisation, aux workflows et plus globalement au DevSecOps.<br><br>
+
+L’année prochaine, il est probable que je continue à travailler sur Okta et sur les
+workflows IAM au sein de l’équipe de ma responsable actuelle. Cela me permettra de
+continuer à développer cette compétence dans un environnement professionnel concret et
+sur des problématiques réelles liées à la cybersécurité et à la gestion des identités.<br><br>
+
+À plus long terme, j’aimerais également préparer certaines certifications liées à
+l’automatisation, au cloud ou à la gestion des identités, même si je n’ai pas encore défini
+précisément lesquelles. Ce sujet fait partie des éléments que je souhaite approfondir après
+mes études afin de continuer à développer mon expertise technique.<br><br>
+
+Enfin, je souhaite continuer à développer des automatisations réellement utiles et
+exploitables dans des environnements professionnels, car c’est un domaine que j’apprécie
+particulièrement et dans lequel je prends beaucoup de plaisir à travailler.
 </p>
-
-
 
 <br><br><br>
-<p style="font-size: 25px;">Compétence présente dans les réalisations suivantes :</p>
-- <a href="../projects/workflows-okta.html" style="text-decoration: underline;">Développement et gestion de Workflows Okta</a><br>
-- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a><br>
-- <a href="../projects/documentation.html" style="text-decoration: underline;">Automatisation de la documentation et mise en place d’un système de contrôle des workflows Okta</a>
 
-</p>
+<p style="font-size: 25px;">Compétence présente dans les réalisations suivantes :</p>
+
+- <a href="../projects/workflows-okta.html" style="text-decoration: underline;">Développement et gestion de Workflows Okta</a><br>
+
+- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a><br>
+
+- <a href="../projects/documentation.html" style="text-decoration: underline;">Automatisation de la documentation et mise en place d’un système de contrôle des workflows Okta</a>
 
 </section>
 
