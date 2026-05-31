@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analyse et Résolution - Portfolio Soulier Jim</title>
+<title>Analyse et résolution de problèmes - Portfolio Soulier Jim</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -33,10 +33,19 @@
 L’analyse et la résolution de problèmes consistent à comprendre une situation, identifier son
 origine, puis mettre en place une solution adaptée. Cela implique de savoir prendre du recul,
 d’analyser les informations disponibles et de tester différentes hypothèses avant d’agir.<br><br>
-Dans le domaine de la cybersécurité, cette compétence est essentielle, car les situations
-rencontrées sont souvent variées et parfois imprévues. Il est donc important d’être capable
-de comprendre rapidement un problème afin de limiter son impact.
+
+Dans le domaine de la cybersécurité et plus largement de l’informatique, cette compétence
+est essentielle, car les situations rencontrées sont souvent variées, complexes et parfois
+imprévues. Il est donc important d’être capable de comprendre rapidement un problème afin
+de limiter son impact, tout en gardant une approche méthodique pour éviter d’introduire de
+nouvelles erreurs.<br><br>
+
+L’analyse de problèmes ne consiste pas uniquement à corriger une erreur technique. Cela
+demande également de comprendre le contexte métier, les dépendances techniques, les
+conséquences possibles d’une modification et parfois même les comportements inattendus
+d’un outil ou d’une technologie.
 </p>
+
 <br><br>
 <hr>
 
@@ -49,29 +58,63 @@ alerte demande de comprendre son origine, d’identifier s’il s’agit d’un 
 faux positif, puis de déterminer les actions à mettre en place. Par exemple, lors d’alertes de
 phishing ou de connexions suspectes, j’ai dû analyser les informations disponibles dans
 plusieurs outils afin de reconstituer le contexte et prendre une décision adaptée.<br><br>
-J’ai également développé cette compétence dans le cadre de la gestion des workflows Okta.
-Lors de certaines demandes de modification, il était nécessaire de comprendre des
-workflows parfois complexes, avec de nombreuses conditions et dépendances. J’ai dû les
-analyser en détail afin d’identifier les points à modifier sans impacter le reste du
-fonctionnement.<br><br>
-Enfin, le projet de développement d’un système d’analyse de logsources m’a permis de
-renforcer fortement cette compétence. J’ai dû identifier les causes possibles d’inactivité des
-flux, définir des seuils cohérents et ajuster le comportement du système en fonction des
-résultats observés. Cela m’a demandé de tester différentes approches et de corriger
-progressivement les erreurs rencontrées.
-</p>
-<br><br>
-<hr>
 
-<h2 style="margin-top:50px;">Mon autocritique</h2>
+J’ai également beaucoup développé cette compétence dans le cadre de la gestion des
+workflows Okta. Certains workflows utilisés par l’équipe IAM étaient particulièrement
+complexes et comportaient de nombreuses conditions, appels API et comportements
+différents selon les cas rencontrés.<br><br>
 
-<p>
-Je pense aujourd’hui avoir un bon niveau dans l’analyse et la résolution de problèmes. Je
-suis capable de comprendre une situation, de poser des hypothèses et de proposer des
-solutions adaptées dans la majorité des cas.<br><br>
-Cependant, il m’arrive encore de passer un peu trop de temps sur certains problèmes,
-notamment lorsque je veux être sûr de ne pas faire d’erreur. Dans certaines situations, une
-prise de décision plus rapide serait parfois plus efficace.
+Un des problèmes les plus complexes que j’ai eu à résoudre concernait un workflow récursif
+utilisé pour gérer des rattachements secondaires sur des profils utilisateurs Okta. Ces
+rattachements permettaient ensuite d’alimenter d’autres applications de l’entreprise,
+notamment Millennium, un logiciel utilisé pour la gestion locative et la copropriété.<br><br>
+
+Le workflow était conçu pour traiter plusieurs situations différentes à travers un système
+récursif où le workflow s’appelait lui-même avec des paramètres différents selon les cas.
+Afin d’éviter les boucles infinies, quatre cas d’arrêt distincts avaient été mis en place.<br><br>
+
+Le problème a été découvert lorsqu’un rattachement secondaire n’a pas été ajouté
+correctement à un utilisateur. L’erreur a été remontée à l’équipe IAM et j’ai été chargé
+d’analyser l’origine du dysfonctionnement. Le workflow étant particulièrement volumineux et
+complexe, j’ai dû passer plusieurs jours à analyser son fonctionnement complet afin de
+reconstituer précisément les différents scénarios possibles.<br><br>
+
+Après de nombreux tests en environnement de qualification et plusieurs analyses des logs
+d’exécution, j’ai finalement identifié que le problème provenait d’une erreur dans le
+format utilisé par certaines données, nouveauté documentées côté Okta. Ce changement avait rendu
+une partie des conditions d’arrêt incompatibles avec certains cas précis, ce qui empêchait le
+workflow de terminer correctement son traitement dans certaines situations.<br><br>
+
+Cette expérience m’a demandé beaucoup de rigueur et de persévérance, car le problème
+n’était pas immédiatement visible et nécessitait de comprendre entièrement la logique interne
+du workflow avant de pouvoir identifier précisément l’origine du bug.<br><br>
+
+
+En parallèle de mon alternance, j’ai également beaucoup développé cette compétence grâce
+à la pratique régulière des CTFs (Capture The Flag), que je réalise depuis plusieurs années.
+Les catégories que je préfère sont généralement le web, la cryptographie, le reverse
+engineering ainsi que des catégories plus originales liées aux radiofréquences ou à
+l’intelligence artificielle ou encore la cathégorie Divers.<br><br>
+
+Récemment, j’ai notamment travaillé sur un challenge de reverse engineering avancé inspiré
+des techniques de nanomites dans le cadre d’un CTF. Le principe du challenge reposait sur
+un programme volontairement très difficile à analyser, utilisant un système de protections où
+certaines instructions étaient remplacées par des interruptions déclenchant un débogueur
+interne chargé de modifier dynamiquement le comportement du programme.<br><br>
+
+Pour résoudre le challenge, j’ai d’abord analysé le fonctionnement global du programme avec un débogueur afin de comprendre à quels moments les interruptions étaient déclenchées. J’ai ensuite identifié que certaines exceptions étaient utilisées pour remplacer dynamiquement les conditions et les branchements du programme.<br><br>
+
+J’ai alors développé une méthode permettant de tracer automatiquement les interruptions générées ainsi que les registres modifiés à chaque étape. En reconstruisant progressivement les différents branchements pris par le programme, j’ai pu reconstituer manuellement une partie importante de la logique cachée.<br><br>
+
+Une autre difficulté venait du fait que certaines valeurs utilisées dans les comparaisons étaient modifiées dynamiquement pendant l’exécution afin d’empêcher une analyse trop simple. J’ai donc dû surveiller l’évolution de la mémoire et comprendre comment certaines structures étaient reconstruites à la volée.<br><br>
+
+Une fois le comportement du programme mieux compris, j’ai remarqué que le binaire validait les caractères du flag un par un à travers plusieurs séries de comparaisons cachées derrière les nanomites. Pour retrouver la valeur attendue, j’ai progressivement forcé certaines branches d’exécution afin d’observer les différences de comportement du programme selon les caractères testés.<br><br>
+
+J’ai ensuite automatisé une partie de l’analyse avec un script Python permettant d’exécuter le programme de nombreuses fois avec différentes entrées, tout en récupérant les branchements pris et certaines valeurs mémoire importantes. En comparant les exécutions correctes et incorrectes, j’ai pu identifier progressivement les caractères attendus par le programme.<br><br>
+
+Après plusieurs heures d’analyse et de reconstruction logique, j’ai finalement réussi à reconstituer entièrement l’algorithme de vérification ainsi que la valeur exacte attendue permettant de valider le challenge.<br><br>
+
+Ce type de challenge demande énormément de logique, de patience et une très bonne capacité à analyser des comportements complexes et peu documentés. Cela m’a également permis d’améliorer ma méthodologie d’analyse ainsi que ma capacité à découper un problème très complexe en plusieurs étapes plus simples à résoudre individuellement.
 </p>
 
 <br><br>
@@ -80,21 +123,31 @@ prise de décision plus rapide serait parfois plus efficace.
 <h2 style="margin-top:50px;">Mon évolution dans cette compétence</h2>
 
 <p>
-Je souhaite continuer à progresser en développant une approche encore plus structurée
-dans ma manière d’analyser les problèmes, notamment dans des contextes complexes ou
-critiques.<br><br>
-L’objectif est également d’améliorer ma réactivité, en trouvant un meilleur équilibre entre
-analyse et prise de décision. Avec l’expérience, je pense pouvoir gagner en efficacité tout en
-conservant la rigueur nécessaire dans ce type de situations.
+Je souhaite continuer à progresser dans cette compétence en développant une approche
+encore plus structurée et méthodique de l’analyse de problèmes complexes.<br><br>
+
+Avec le temps, j’aimerais être capable d’intervenir plus efficacement sur des incidents
+critiques nécessitant une analyse rapide tout en conservant un haut niveau de rigueur dans
+la recherche des causes réelles du problème.<br><br>
+
+Je souhaite également approfondir mes compétences en reverse engineering et en analyse
+bas niveau, notamment à travers les CTFs et des projets personnels plus techniques. Ces
+activités me permettent de développer des réflexes d’analyse très utiles également dans un
+contexte professionnel.<br><br>
+
+Enfin, j’aimerais continuer à travailler sur des environnements techniques complexes comme
+ceux liés à l’IAM et aux workflows automatisés. Ce sont des sujets que j’apprécie beaucoup,
+car ils demandent à la fois de la logique, de la technique et une bonne compréhension des
+besoins métiers.
 </p>
+
 <br><br><br>
 <p style="font-size: 25px;">Compétence présente dans les réalisations suivantes :</p>
+
 - <a href="../projects/workflows-okta.html" style="text-decoration: underline;">Développement et gestion de Workflows Okta</a><br>
 - <a href="../projects/access-requests.html" style="text-decoration: underline;">Gestion, création et développement d’Access Requests</a><br>
-- <a href="../projects/alertes.html" style="text-decoration: underline;">Traitement et analyse d’alertes de sécurité (SOC)</a><br>
-- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a><br>
-
-
+- <a href="../projects/soc.html" style="text-decoration: underline;">Traitement et analyse d’alertes de sécurité (SOC)</a><br>
+- <a href="../projects/logsources.html" style="text-decoration: underline;">Développement d’un système d’analyse de logsources</a>
 
 </section>
 
